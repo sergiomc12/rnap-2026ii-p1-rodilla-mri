@@ -21,7 +21,8 @@
        magnética con supervisión débil derivada de informes multilingües}
 
 \author{%
-  Anónimo 1 \quad Anónimo 2 \quad Anónimo 3 \quad Anónimo 4 \quad Anónimo 5 \\
+  Flavio César Amayo Gamboa \quad Gustavo Adolfo Huarcaya Delgado \\
+  Jhordy Joel Maximiliano Cusi \quad Sergio Mondragon Contreras \\
   Facultad de Ingeniería Industrial y de Sistemas \\
   Universidad Nacional de Ingeniería
 }
@@ -38,6 +39,9 @@
 \setcounter{topnumber}{3}
 \setcounter{bottomnumber}{2}
 \setcounter{totalnumber}{4}
+
+% Titulo de la bibliografia en espanol (neurips.sty lo fija en "References").
+\renewcommand{\bibsection}{\section*{\normalsize\bfseries Referencias}}
 
 \begin{document}
 \maketitle
@@ -59,13 +63,10 @@ por etiqueta llega a 0.761, el mayor valor puntual, con intervalo solapado. Un b
 pareado muestra que solo dos de siete diferencias estudiadas en la ablación son
 estadísticamente significativas, y que las dos son decisiones sobre los
 \emph{datos} (el preentrenamiento en ImageNet y el plano de la resonancia) y no
-sobre la arquitectura. Se documenta además que una versión anterior de este
-trabajo reportaba como significativa una ablación que no lo era, por entrenar en
-GPU sin fijar los kernels: dos corridas idénticas divergían hasta 0.041 de AUC,
-más que cuatro de las siete diferencias que se miden. El análisis con Grad-CAM revela que la confianza del
-modelo correlaciona con la plausibilidad anatómica de su evidencia, y la
-evaluación por idioma documenta un sesgo lingüístico marcado que persiste tras la
-mitigación.
+sobre la arquitectura. En tres casos, las predicciones más confiadas se apoyan en
+regiones anatómicamente plausibles; solo 3 de 12 hallazgos muestran activación
+consistente. La evaluación por idioma documenta un sesgo lingüístico marcado que
+persiste tras la mitigación.
 \end{abstract}
 
 % ============================================================================
@@ -80,7 +81,7 @@ semanas, y un clasificador automático podría priorizar estudios o actuar como
 segunda lectura.
 
 La dificultad no es la que suele plantearse en los conjuntos curados de visión
-por computadora. Acá la supervisión disponible es el obstáculo
+por computadora. En este problema, la supervisión disponible es el obstáculo
 principal: de 4\,407 estudios de entrenamiento, solo 58 cuentan con las doce
 etiquetas verificadas por un radiólogo. Los 4\,349 restantes aportan únicamente
 el informe original en texto libre, redactado en uno de nueve idiomas por
@@ -143,10 +144,10 @@ El conjunto RSNA Knee Abnormality Detection~\citep{rsna2026knee} contiene
 entrenamiento. Cada estudio incluye entre 3 y 14 series, con una mediana de 28
 cortes por serie.
 
-La detección automática de idioma sobre los informes arroja nueve lenguas:
-inglés (39.4\%), español (15.5\%), turco (12.4\%), croata (9.2\%), griego
-(7.3\%), alemán (5.9\%), búlgaro (5.0\%), neerlandés (3.5\%) y francés (1.8\%).
-Dos de ellas no emplean alfabeto latino.
+El enunciado menciona aproximadamente doce idiomas; la detección automática sobre
+los informes arroja nueve lenguas: inglés (39.4\%), español (15.5\%), turco
+(12.4\%), croata (9.2\%), griego (7.3\%), alemán (5.9\%), búlgaro (5.0\%),
+neerlandés (3.5\%) y francés (1.8\%). Dos de ellas no emplean alfabeto latino.
 
 La heterogeneidad técnica de las imágenes es considerable. Sobre una muestra de
 764 cortes se midieron diez resoluciones distintas entre $320\times320$ y
@@ -260,9 +261,7 @@ dominio: sus ramas paralelas observan campos receptivos de $1\times1$, $3\times3
 y $5\times5$ a la misma profundidad, y los hallazgos de rodilla se manifiestan a
 escalas muy dispares: una rotura meniscal abarca milímetros, un derrame ocupa
 la cápsula articular. Con 576 estudios, capturar ambas escalas sin profundizar
-resulta más valioso que la profundidad en sí. Las reducciones $1\times1$ previas
-a las ramas $3\times3$ y $5\times5$ son precisamente lo que contiene el conteo de
-parámetros.
+resulta más valioso que la profundidad en sí.
 
 El \textbf{modelo B} emplea ResNet-50 con pesos de ImageNet (24.1~M parámetros),
 descartando su cabeza de clasificación y conservando la característica agrupada
@@ -273,7 +272,7 @@ atención sigue la formulación con compuerta de~\citet{ilse2018attention}: una 
 pequeña puntúa cada grupo, los puntajes se normalizan con softmax y el embedding
 del estudio es su suma ponderada. Un promedio diluiría el hallazgo (una rotura
 meniscal abarca dos o tres cortes de treinta) y un máximo descartaría la
-evidencia corroborante además de resultar frágil ante un corte ruidoso.
+evidencia corroborante.
 
 \subsection{Atención por etiqueta y reparto por plano}
 \label{sec:por-caras}
@@ -286,34 +285,45 @@ C--E usan doce atenciones. El codificador y la proyección siguen compartidos
 compuerta, de modo que cada etiqueta elige sus grupos sin multiplicar el costo
 del codificador.
 
+Estas configuraciones se entrenan sobre los 4\,407 estudios, no sobre los 576:
+de cada estudio se extraen 64 grupos en vez de 8, la partición reserva los 56
+dorados como prueba y divide el resto en 80\% de entrenamiento y 20\% de
+validación, y el preprocesamiento es el mismo salvo el plano, que deja de ser
+únicamente sagital.
+
 El reparto por plano responde a que una estructura se ve o no según la dirección
 del corte. La artrosis patelofemoral es el desgaste entre la rótula y el surco
 femoral: el corte axial muestra esa superficie completa y el coronal la superpone
 al fémur, y medido sobre validación la etiqueta gana 0.060 de AUC al cambiar de
-plano ---el mayor efecto de este trabajo. El menisco lateral pierde 0.033,
-coherente con ser una estructura horizontal que el axial corta en su propio
-plano. La configuración E entrena cuatro modelos y cada etiqueta se predice con
-el suyo. El reparto se decidió sobre validación; los dorados se usaron una sola
-vez, ya fijado.
+plano ---el mayor efecto por etiqueta al cambiar de plano. El menisco lateral
+pierde 0.033, coherente con ser una estructura horizontal que el axial corta en
+su propio plano. La configuración D entrena un modelo Inception por cada uno de
+los tres planos (sagital, axial y coronal) y rutea cada etiqueta al plano donde
+rinde mejor en validación; la E añade una cuarta corrida ResNet-50 para las dos
+etiquetas (menisco lateral y artrosis patelofemoral) que mejoran al cambiar de
+plano, de ahí que D tenga tres modelos y E cuatro. El reparto se decidió sobre
+validación; los dorados se usaron una sola vez, ya fijado.
 
 \subsection{Protocolo de evaluación}
 
 Las decisiones de arquitectura, función de pérdida, agregación, número de épocas
 y umbral se toman exclusivamente mediante validación sobre las etiquetas débiles
-(416 estudios de entrenamiento, 104 de validación). De los 58 estudios con
-etiqueta de radiólogo, 2 no aportan una serie sagital sensible a líquido con
-supresión grasa y quedan fuera del subconjunto preprocesado, de modo que la
-prueba se realiza sobre los 56 restantes, una única vez, al final, para la cifra
-que se reporta.
+(416 estudios de entrenamiento, 104 de validación). El umbral es único por
+configuración ---no uno por etiqueta---: se elige en validación el valor que
+maximiza el $F_1$ macro y se aplica sin modificación sobre los dorados. De los 58
+estudios con etiqueta de radiólogo, 2 no aportan una serie sagital sensible a
+líquido con supresión grasa y quedan fuera del subconjunto preprocesado, de modo
+que la prueba se realiza sobre los 56 restantes, una única vez, al final, para la
+cifra que se reporta. El enunciado sugiere reservarlos como validación limpia;
+usarlos como prueba final es más estricto, porque evita seleccionar modelos sobre
+56 estudios.
 
-Esta separación no es una formalidad. Con 56 estudios de prueba y nueve positivos
+Con 56 estudios de prueba y nueve positivos
 de ligamento colateral medial, seleccionar el modelo contra ese conjunto no
 mediría generalización sino el grado de sobreajuste de la propia selección, y la
 cifra posterior se informaría sobre los mismos datos empleados para elegir. La
-regla se mantiene por su propio fundamento y no por una observación empírica:
-una versión anterior de este trabajo la ilustraba con una inversión del
-ordenamiento entre ambos conjuntos que, al hacer el entrenamiento reproducible,
-resultó ser un artefacto (Sección~\ref{sec:reproducibilidad}).
+regla se mantiene por su propio fundamento, con independencia de cualquier
+observación empírica puntual.
 
 Todo intervalo de confianza se obtiene por bootstrap sobre 2\,000 remuestreos.
 Las comparaciones entre configuraciones emplean bootstrap \emph{pareado}: ambos
@@ -329,7 +339,7 @@ conservador.
 \label{sec:etiquetas_resultados}
 
 Un buscador de términos sin tratamiento de negación alcanza apenas un 48.3\% de
-acuerdo en derrame articular y produce 112 falsos positivos sobre 58 estudios. La causa es estructural: los informes radiológicos
+acuerdo en derrame articular y produce 112 falsos positivos sobre 58 estudios. La detección de negación elimina 29 de esos 112 falsos positivos sin perder un verdadero positivo. La causa es estructural: los informes radiológicos
 enumeran tanto lo que el radiólogo encontró como lo que descartó
 (\emph{``ACL is intact''}, \emph{``no fracture is seen''}, \emph{``medial
 meniscus is not torn''}), de modo que un buscador de términos marca positivo
@@ -343,7 +353,7 @@ traducir todo lo lleva a 74.0\% ($F_1$ 0.556, ruido 26.0\%); y el esquema híbri
 25.7\% es el ruido de entrenamiento y 26.0\% una medición del estudio de
 traducción. Traducir todo y traducir salvo inglés dan el
 mismo resultado hasta la tercera cifra: traducir inglés a inglés no cambia nada
-medible, y lo que mueve la aguja es exclusivamente \emph{no} traducir el español.
+medible, y la mejora proviene solo de \emph{no} traducir el español.
 
 La mejora del esquema híbrido sobre la línea base es de $+0.076$ en $F_1$ macro,
 con IC95\% $[+0.039, +0.127]$ por bootstrap pareado sobre estudios: el intervalo
@@ -389,15 +399,14 @@ la observada en los dorados va de 1.02 en menisco medial (45.6\%
 frente a 44.8\%, no subdetecta nada) a 0.22 en sinovitis. Las tres
 peores no fallan por el mismo motivo: sinovitis es la única donde el recall
 medido también se hunde (0.37), mientras que fractura tiene recall 0.78 y
-extrae poco simplemente porque es poco prevalente. Esa distinción separa
-``la etiqueta es ruidosa'' de ``la etiqueta es rara'', que son dos problemas
-distintos con soluciones distintas.
+extrae poco simplemente porque es poco prevalente. Esa distinción separa la
+etiqueta ruidosa de la rara, dos problemas con soluciones distintas.
 
 \subsection{Curvas de entrenamiento}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.76\textwidth]{figuras/curvas_entrenamiento.png}
+\includegraphics[width=0.60\textwidth]{figuras/curvas_entrenamiento.png}
 \caption{Izquierda: pérdida de entrenamiento (línea continua) y de validación
          (discontinua). Derecha: AUC macro de validación; el punto marca la época
          que la detención temprana conserva.}
@@ -407,8 +416,7 @@ distintos con soluciones distintas.
 El sobreajuste es visible de inmediato. La razón entre la pérdida final de
 validación y la de entrenamiento es de $5.7\times$ para ResNet-50 con promedio,
 $3.2\times$ con atención y $1.1\times$ para Inception. Esta última mantiene ambas
-curvas juntas por falta de capacidad para separarlas, no por diseño, y obtiene el
-AUC más bajo de las tres.
+curvas juntas por falta de capacidad, y obtiene el AUC más bajo de las tres.
 
 \subsection{Comparación de las dos arquitecturas}
 
@@ -417,9 +425,13 @@ AUC más bajo de las tres.
 La configuración E alcanza el mayor AUC macro puntual sobre los dorados, 0.761,
 con $F_1$ de 0.588 al umbral 0.20 elegido en validación; su intervalo
 $[0.715, 0.810]$ se solapa con el de ResNet-50 con promedio ($[0.662, 0.755]$),
-de modo que el margen sobre este no es significativo. El umbral queda muy por
-debajo de 0.5, coherente con prevalencias del 12.2\% al 50.7\%: un umbral de 0.5
-descartaría casi todos los positivos de las etiquetas raras.
+de modo que el margen sobre este no es significativo. El análisis detallado
+(desglose por etiqueta, Grad-CAM y sesgo) se hace sobre ResNet-50 con promedio y
+no sobre E: E rutea cada etiqueta a un modelo distinto, de modo que no define un
+único mapa de activación por estudio ni una matriz de confusión comparable entre
+etiquetas. El umbral queda muy por debajo de 0.5, coherente con las prevalencias
+bajas del Cuadro~\ref{tab:etiquetas}: un umbral de 0.5 descartaría casi todos los
+positivos de las etiquetas raras.
 
 Entre las dos arquitecturas del entregable \#2, ResNet-50 con ImageNet supera a
 la Inception escrita desde cero por 0.018 de AUC, y el bootstrap pareado deja ese
@@ -435,11 +447,15 @@ para que el preentrenamiento rindiera, no una equivalencia entre los modelos.
 
 \input{tablas/etiquetas}
 
+Al umbral 0.20, el modelo del análisis detallado (ResNet-50 con promedio) alcanza
+una precisión macro de 0.466 y un recall macro de 0.744; el $F_1$ macro, 0.560,
+promedia ambas por etiqueta. El recall supera a la precisión porque el umbral bajo
+prioriza no perder los positivos de las etiquetas raras.
+
 Tres de las doce etiquetas no se distinguen del azar: su intervalo
 incluye 0.5. El ancho medio del intervalo por etiqueta es 0.302 frente a 0.093
-del macro, un resumen 3.3 veces más estrecho que cualquiera de sus
-componentes por pura aritmética, no por mayor certeza sobre ningún hallazgo
-concreto. Los dos casos extremos fallan por razones distintas: el menisco
+del macro: el macro es 3.3 veces más estrecho por aritmética, no por mayor
+certeza. Los dos casos extremos fallan por razones distintas: el menisco
 lateral tiene 23 positivos, suficientes, y aun así da 0.531 (el modelo no lo
 detecta), mientras que el ligamento colateral medial tiene nueve y su intervalo
 abarca 0.39 puntos, de modo que ni siquiera se puede decir si lo detecta.
@@ -466,16 +482,23 @@ fijado antes de crear el contexto de CUDA. La verificación corre como una etapa
 del pipeline y falla si las dos corridas no coinciden bit a bit, a un costo
 despreciable (2.4 minutos contra 2.2 por corrida).
 
+\paragraph{Reproducibilidad del pipeline.}
+Todo el pipeline se ejecuta con un único comando,
+\texttt{python pregunta1/paso6\_informe/ejecutar\_todo.py}, sobre las versiones
+fijadas en \texttt{requirements.txt}; es idempotente y recompila el informe desde
+los JSON versionados aun sin el dataset. El código, los pesos (\emph{release}
+\texttt{v1.0-pesos}) y las pruebas unitarias en \texttt{tests/} están en el
+repositorio: \url{https://github.com/sergiomc12/rnap-2026ii-p1-rodilla-mri}.
+
 \subsection{Validación cruzada}
 \label{sec:cruzada}
 
-Las primeras decisiones se tomaron sobre una única división 80/20 de los estudios
-con etiqueta débil. Repetir el entrenamiento sobre cinco pliegues da la escala con
-la que hay que leer cualquier diferencia medida sobre una sola partición:
-ResNet-50 con promedio alcanza $0.7354 \pm 0.0125$ de AUC medio entre pliegues,
-con atención $0.6975 \pm 0.0143$, e Inception con atención $0.6717 \pm 0.0150$.
-Las tres desviaciones rondan 0.014, de modo que una diferencia menor a unos 0.03 entre configuraciones medida sobre una sola partición no se distingue de la variación entre pliegues. El detalle por pliegue está en
-\texttt{paso3\_modelos/validacion\_cruzada.json}.
+La validación cruzada sobre cinco pliegues da la escala con la que leer cualquier
+diferencia medida sobre una sola partición: ResNet-50 con promedio alcanza
+$0.7354 \pm 0.0125$ de AUC entre pliegues, con atención $0.6975 \pm 0.0143$ e
+Inception con atención $0.6717 \pm 0.0150$. Con desviaciones de 0.014, una
+diferencia menor a 0.03 sobre una sola partición no se distingue de la variación
+entre pliegues (\texttt{paso3\_modelos/validacion\_cruzada.json}).
 
 \subsection{Estudio de ablación}
 \label{sec:ablacion}
@@ -500,13 +523,6 @@ tiene parámetros y no puede sobreajustar), y es consistente en validación
 (0.762 contra 0.724), pero afirmarla con 56 estudios de prueba sería ir más
 lejos de lo que el dato permite.
 
-Conviene decir explícitamente qué cambió: una versión anterior de este trabajo
-reportaba esta misma comparación como $+0.103$ con intervalo $[+0.048, +0.159]$
-y la presentaba como su hallazgo principal. Ese número provenía de corridas no
-reproducibles (Sección~\ref{sec:reproducibilidad}). Con el entrenamiento fijado,
-el efecto es menor y no alcanza significancia. No es que la conclusión anterior
-fuera falsa: es que nunca estuvo sostenida.
-
 \paragraph{Las decisiones sobre los datos sí pesan.} Las dos diferencias que
 sobreviven al test son las que cambian \emph{qué ve} el modelo: de dónde vienen
 sus pesos iniciales y qué plano se le muestra. Es coherente con lo que ocurre en
@@ -526,32 +542,29 @@ original, el mapa de activación y la superposición de ambos.
 \begin{figure}[htbp]
 \centering
 % Las tres son paneles de relacion 3:1, asi que apiladas ocupan alto en
-% proporcion a su ancho. Bajaron de 0.52 a 0.40 al incorporar el segundo bloque
-% de la Tabla 1: los paneles se siguen leyendo y el cuerpo vuelve a entrar en
-% las 10 paginas que pide el enunciado.
-\includegraphics[width=0.40\textwidth]{figuras/gradcam_Effusion.png}
+% proporcion a su ancho. Bajaron a 0.35 para que el cuerpo entre en las 10
+% paginas que pide el enunciado tras incorporar la columna de prevalencia y las
+% metricas de precision/recall: los paneles se siguen leyendo.
+\includegraphics[width=0.30\textwidth]{figuras/gradcam_Effusion.png}
 \vspace{1pt}
-\includegraphics[width=0.40\textwidth]{figuras/gradcam_ACL.png}
+\includegraphics[width=0.30\textwidth]{figuras/gradcam_ACL.png}
 \vspace{1pt}
-\includegraphics[width=0.40\textwidth]{figuras/gradcam_Medial_Meniscus.png}
+\includegraphics[width=0.30\textwidth]{figuras/gradcam_Medial_Meniscus.png}
 \caption{Grad-CAM sobre ResNet-50 con promedio.
          \emph{Arriba}, derrame articular ($p = 0.576$): la activación se
          concentra en el receso suprapatelar, donde el líquido se acumula.
          \emph{Centro}, ligamento cruzado anterior ($p = 0.815$): cubre la
          región intercondílea, donde el ligamento se inserta. \emph{Abajo},
          menisco medial ($p = 0.406$): la activación cae fuera de la
-         articulación. Es el caso más incómodo, porque su AUC de 0.734 está
-         entre los mejores: el modelo acierta sin mirar donde debería.}
+         articulación. Es el caso menos plausible anatómicamente: la predicción
+         es correcta, pero la activación cae fuera de la articulación.}
 \label{fig:gradcam}
 \end{figure}
 
-Los dos casos plausibles son también los de mayor probabilidad predicha: el
-derrame articular activa el receso suprapatelar y el ligamento cruzado anterior
-la región intercondílea. El menisco medial es el más informativo, y no por
-fallar: con $p = 0.406$ y umbral 0.20 el modelo lo predice correctamente como
-positivo, y su AUC de 0.734 está entre los mejores de la tabla. Lo que Grad-CAM
-muestra es que esa predicción correcta se apoya en una región que está fuera de
-la articulación. Ninguna métrica de desempeño podía advertirlo.
+Los dos casos plausibles son los de mayor probabilidad predicha. El menisco
+medial es el más informativo: con $p = 0.406$ el modelo lo predice correctamente
+y su AUC de 0.734 está entre los mejores, pero Grad-CAM muestra que esa predicción
+se apoya en una región fuera de la articulación.
 
 Para distinguir un patrón de una coincidencia, el procedimiento se repitió sobre
 ocho estudios dorados positivos de cada uno de los doce hallazgos, midiendo el
@@ -559,24 +572,25 @@ centro de masa de la región activada en coordenadas normalizadas.
 
 Solo 3 de los doce hallazgos tienen activación consistente
 (dispersión del centro de masa menor a 0.20 y ningún caso en el margen,
-medido en \texttt{paso5\_ablacion\_gradcam/patron\_gradcam.json}), y la
-observación cualitativa de la figura coincide con la medición: el derrame
-articular y el ligamento cruzado anterior están entre esos tres. En los nueve
-restantes la evidencia varía demasiado entre casos como para considerarla
-anatómicamente localizada, y todos presentan al menos un caso cuya activación cae
-en el margen de la imagen. Dado que el preprocesamiento recorta 130\,mm centrados
-en la rodilla, una activación en el margen no puede corresponder a la articulación.
+medido en \texttt{paso5\_ablacion\_gradcam/patron\_gradcam.json}); el derrame
+articular y el ligamento cruzado anterior están entre ellos, y la medición
+coincide con la figura. En los nueve restantes la evidencia varía demasiado entre
+casos como para considerarla anatómicamente localizada. Dado que el
+preprocesamiento recorta 130\,mm centrados en la rodilla, una activación en el
+margen no puede corresponder a la articulación.
 
-Esto tiene lectura clínica directa: las predicciones dudosas no son solo
-inciertas, sino que además se apoyan en regiones que no corresponden a la
-anatomía del hallazgo, y como los umbrales seleccionados caen entre 0.10 y
-0.30, esas predicciones se convierten en positivos.
+Esto tiene lectura clínica directa: las predicciones dudosas se apoyan en
+regiones que no corresponden a la anatomía del hallazgo y, como los umbrales
+caen entre 0.10 y 0.30, se convierten en positivos.
 
 \subsection{Desbalance de clases}
 
-Las prevalencias en la muestra empleada van del 12.2\% (osteoartrosis del
-compartimento lateral) al 50.7\% (daño de menisco medial), un factor de cuatro
-entre extremos.
+La columna Prev.\ del Cuadro~\ref{tab:etiquetas} da la prevalencia de cada uno de
+los doce hallazgos sobre los 4\,349 estudios no dorados: va del 4.8\%
+(osteoartrosis del compartimento lateral) al 45.5\% (daño de menisco medial), un
+factor de 9.5 entre extremos. El muestreo por cuotas descrito en la metodología
+reduce ese factor a unos 4.5 en el subconjunto de 576 estudios con que se
+entrenan las configuraciones A--B, mitigando en parte el desbalance.
 
 Se evaluaron dos mitigaciones. La entropía cruzada binaria ponderada asigna a
 cada etiqueta un peso inversamente proporcional a su prevalencia, con tope en 10
@@ -613,9 +627,9 @@ Un modelo entrenado sobre estas etiquetas aprende predominantemente de estudios
 redactados en inglés o español. Desplegado en un centro que informa en griego o
 búlgaro, su rendimiento real sería inferior al reportado y ninguna métrica
 agregada lo advertiría: un AUC macro de 0.708 no transparenta que la supervisión
-fue sistemáticamente peor para unos centros que para otros. El sesgo no está en
-el modelo sino en los datos que lo alimentan, lo que lo vuelve invisible a
-cualquier auditoría que examine únicamente las predicciones.
+fue sistemáticamente peor para unos centros que para otros. El sesgo está en los
+datos que lo alimentan, no en el modelo, y es invisible a una auditoría que
+examine solo las predicciones.
 
 Existe además un límite no verificable: de los 4\,349 estudios sin etiqueta
 dorada, 1\,989 corresponden a los siete idiomas problemáticos y su calidad de
@@ -629,39 +643,27 @@ antes de operar en un centro cuyo idioma no estuviera bien representado.
 \section{Discusión crítica de las limitaciones}
 % ============================================================================
 
-\paragraph{Todo está medido sobre muestras chicas.}
+\paragraph{Tamaño de muestra.}
 Los 56 estudios dorados producen un intervalo del 95\% de aproximadamente
 $\pm0.05$ sobre el AUC macro, y de 0.30 en promedio por etiqueta individual; cada
 pliegue de la validación cruzada emplea 104 estudios con etiqueta débil. Eso fija
 el tamaño mínimo de efecto que este trabajo puede detectar, y explica por qué
-cinco de las siete comparaciones de la ablación quedan sin resolver: la
-diferencia entre las dos arquitecturas, por ejemplo, es de $-0.018$ con intervalo
-$[-0.098, +0.058]$, y afirmar que una supera a la otra sería interpretar ruido de
-muestreo como señal.
-
-\paragraph{Una conclusión que desapareció al fijar el entrenamiento.}
-Una versión anterior observaba que el ordenamiento entre las dos arquitecturas se
-invertía entre validación y prueba. Con el entrenamiento reproducible esa
-inversión no ocurre: ResNet-50 queda por delante en ambos conjuntos (0.724 y
-0.646, contra 0.698 y 0.628). Es la Sección~\ref{sec:reproducibilidad} en su
-forma más incómoda: la falta de reproducibilidad no solo contaminaba las
-comparaciones numéricas, también las observaciones cualitativas construidas
-sobre ellas.
+cinco de las siete comparaciones de la ablación quedan sin resolver.
 
 \paragraph{El 25.7\% de etiquetas incorrectas es un techo, y parte de él es irreducible.}
 Parte de ese ruido no se puede eliminar desde el texto: un informe que consigna
 \emph{Moderate joint effusion} tiene la etiqueta de derrame en cero, y otro que
 menciona \emph{osteochondral fracture} tiene la de fractura en cero, porque media
 criterio clínico: una fractura osteocondral en la faceta rotuliana se
-contabiliza como osteoartrosis patelofemoral. Ningún método basado solo en texto
-alcanzaría acuerdo perfecto. Sinovitis es el caso extremo: 8 de sus 17 positivos
+contabiliza como osteoartrosis patelofemoral. Sinovitis es el caso extremo: 8 de sus 17 positivos
 perdidos no mencionan nada sinovial en todo el informe, de modo que ampliar el
-léxico no la recupera.
+léxico no la recupera. Queda sin evaluar como factor de ablación ponderar por
+confianza frente a entrenar solo con estudios de alta confianza, la comparación
+más pertinente dado que el ruido de etiqueta domina el resultado.
 
 \paragraph{Sobre la agregación por atención no se puede concluir nada.}
 Queda por detrás del promedio simple en los dos conjuntos, pero el intervalo de
-la diferencia cruza cero. El enunciado pide implementar un componente cuyo aporte
-este trabajo no puede medir con 56 estudios de prueba.
+la diferencia cruza cero: con 56 estudios de prueba su aporte no es medible.
 
 \paragraph{La activación es consistente en solo tres de doce hallazgos.}
 Medido sobre ocho estudios por hallazgo, la dispersión del centro de masa se
@@ -669,35 +671,38 @@ mantiene por debajo de 0.20 sin ningún caso en el margen únicamente para el
 ligamento cruzado anterior, el menisco lateral y el derrame articular. En los
 nueve restantes la evidencia en que el modelo se apoya varía demasiado entre
 casos como para considerarla anatómicamente localizada, y todos presentan algún
-caso cuya activación cae en el borde de la imagen, fuera de la articulación.
+caso cuya activación cae en el borde de la imagen, fuera de la articulación. El
+menisco lateral figura entre los tres pese a un AUC de 0.531
+(Cuadro~\ref{tab:etiquetas}): la activación consistente no implica una predicción
+correcta.
 
 \section{Conclusiones}
 % ============================================================================
 
-Tres resultados contradicen expectativas razonables de partida.
+Los resultados principales son tres.
 
 Primero, casi ninguna intervención del lado del modelo fue
 significativa: de las siete de la ablación, solo el preentrenamiento en ImageNet
-($+0.084$) y el plano de la resonancia ($+0.056$). Del lado de las etiquetas, la
-detección de negación eliminó 29 de 112 falsos positivos sin perder un verdadero
-positivo.
+($+0.084$) y el plano de la resonancia ($+0.056$).
 
 Segundo, eso describe el régimen y no las arquitecturas: con 4\,407
 estudios en lugar de 576, ResNet-50 supera a Inception por 0.103 de AUC con
 intervalos que no se solapan. El empate del entregable \#2 medía un conjunto
-demasiado pequeño para que el preentrenamiento rindiera. Comparar arquitecturas
-sin declarar el régimen no significa gran cosa.
+demasiado pequeño para que el preentrenamiento rindiera. Por eso la comparación debe
+declarar el régimen de datos.
 
 Tercero, un entrenamiento en GPU no es reproducible por sembrar los
 generadores: dos corridas con la misma semilla llegaban a diferir 0.041 de AUC,
-por encima de cuatro de las siete comparaciones del estudio. Sobre esa base una versión anterior afirmaba
-que la atención era peor que el promedio; con los kernels fijados el efecto queda
-en $[-0.001, +0.128]$. Nada en el informe lo dejaba ver.
+por encima de cuatro de las siete comparaciones del estudio. Con los kernels
+fijados, el efecto de la atención frente al promedio queda en $[-0.001, +0.128]$
+y no alcanza significancia; el bootstrap, que mide el muestreo de estudios y no la
+ejecución, no advertía esa variabilidad.
 
 La limitación de fondo persiste: 56 estudios no distinguen efectos menores a
-0.05 de AUC, y dos etiquetas (sinovitis y artrosis patelofemoral) rinden
-cerca del azar en los dorados pese a su desempeño en validación, lo que sugiere
-que el modelo aprendió a predecir al extractor y no al hallazgo.
+0.05 de AUC. En la configuración E, de mayor AUC macro, sinovitis (0.559) y
+artrosis patelofemoral (0.592) quedan cerca del azar sobre los dorados, lo que
+sugiere que para esas dos etiquetas el modelo predice al extractor y no al
+hallazgo.
 
 \bibliographystyle{plainnat}
 \bibliography{referencias}

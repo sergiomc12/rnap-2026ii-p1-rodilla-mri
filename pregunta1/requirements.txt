@@ -1,18 +1,18 @@
 # Dependencias de la Pregunta 1 (clasificacion multietiqueta de rodilla en MRI).
 #
-# Versiones fijadas desde el .venv del repositorio (pip freeze), salvo torch y
-# torchvision: la rueda instalada es la de CUDA 12.8 (cu128) servida por el
-# indice de PyTorch, no una de PyPI, asi que se fija un piso de version. Para
-# reproducir las corridas en GPU, instalar esas dos desde el indice cu128:
+# Versiones fijadas desde el .venv del repositorio (pip freeze). torch y
+# torchvision se fijan a la version usada (2.11.0 / 0.26.0); la rueda instalada
+# es la de CUDA 12.8 (cu128) servida por el indice de PyTorch, no una de PyPI.
+# Para reproducir las corridas en GPU, instalar esas dos desde el indice cu128:
 #
 #   pip install -r pregunta1/requirements.txt
-#   pip install "torch>=2.11" "torchvision>=0.26" \
+#   pip install "torch==2.11.0" "torchvision==0.26.0" \
 #       --index-url https://download.pytorch.org/whl/cu128
 #
 # En CPU, las ruedas de PyPI de torch/torchvision tambien sirven (mas lentas).
 
-torch>=2.11
-torchvision>=0.26
+torch==2.11.0
+torchvision==0.26.0
 
 numpy==2.5.4
 pandas==3.1.0

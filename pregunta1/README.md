@@ -67,7 +67,7 @@ python -m venv .venv
 # 2. Instalar las dependencias de la Pregunta 1
 pip install -r pregunta1/requirements.txt
 # GPU (CUDA 12.8): reinstalar torch/torchvision desde el indice de PyTorch
-# pip install "torch>=2.11" "torchvision>=0.26" --index-url https://download.pytorch.org/whl/cu128
+# pip install "torch==2.11.0" "torchvision==0.26.0" --index-url https://download.pytorch.org/whl/cu128
 
 # 3. El comando unico que corre todo el pipeline
 python pregunta1/paso6_informe/ejecutar_todo.py
@@ -209,6 +209,13 @@ distintas según el escáner.
 | ZIP completo de la competencia | `D:\compartido\rsna-knee-abnormality-detection.zip` (265 GB comprimidos, 569.76 GB dentro) |
 | Los 5 CSV de metadatos | `data_kaggle/raw/` |
 | DICOM sueltos ya extraídos | `data_kaggle/dicom/train_series/` (764 cortes, 27 series) |
+
+La ruta del ZIP se fija con la variable de entorno **`RSNA_ZIP`**; si no está
+definida, `pregunta1/rutas.py` usa la ubicación histórica
+`D:\compartido\rsna-knee-abnormality-detection.zip`. Para correr el pipeline con
+el ZIP en otra ruta, exportar `RSNA_ZIP` antes de `ejecutar_todo.py` (por ejemplo
+`set RSNA_ZIP=E:\datos\rsna.zip` en Windows o
+`export RSNA_ZIP=/datos/rsna.zip` en Linux/macOS).
 
 El ZIP **no se descomprime**: `zipfile` lee cualquier entrada por nombre a
 **348 MB/s**, así que extraer 600 estudios toma menos de un minuto. No hay que

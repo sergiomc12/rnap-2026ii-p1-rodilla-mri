@@ -1,23 +1,23 @@
 \begin{table}[ht]
 \centering
-\caption{Desglose por etiqueta sobre los estudios dorados. Las tres columnas de AUC corresponden a Inception (A), ResNet-50 (B) y ResNet-50 con promedio; el intervalo y la matriz de confusión son de esta última, al umbral 0.20 elegido en validación. Un asterisco marca los intervalos que incluyen 0.5: son 3 de 12, es decir hallazgos que no se distinguen del azar.}
+\caption{Desglose por etiqueta sobre los estudios dorados. Las tres columnas de AUC corresponden a Inception (A), ResNet-50 (B) y ResNet-50 con promedio; el intervalo y la matriz de confusión son de esta última, al umbral 0.20 elegido en validación. Un asterisco marca los intervalos que incluyen 0.5: son 3 de 12, es decir hallazgos que no se distinguen del azar. La columna Prev.\ es la prevalencia de cada hallazgo sobre los 4\,349 estudios no dorados (distribución natural).}
 \label{tab:etiquetas}
-\begin{tabular}{lrcccrrrrc}
+\begin{tabular}{lrrcccrrrrc}
 \toprule
-Etiqueta & Pos. & A & B & Mejor (IC95\%) & TP & FP & FN & TN & $F_1$ \\
+Etiqueta & Pos. & Prev. & A & B & Mejor (IC95\%) & TP & FP & FN & TN & $F_1$ \\
 \midrule
-Lig.\ cruzado ant. & 23 & 0.714 & 0.706 & 0.776 $[0.64, 0.89]$ & 20 & 17 & 3 & 16 & 0.667 \\
-Lig.\ colateral med. & 9 & 0.496 & 0.520 & 0.638 $[0.44, 0.83]$$^{*}$ & 6 & 20 & 3 & 27 & 0.343 \\
-Menisco medial & 24 & 0.611 & 0.680 & 0.734 $[0.59, 0.86]$ & 22 & 18 & 2 & 14 & 0.687 \\
-Menisco lateral & 23 & 0.545 & 0.497 & 0.531 $[0.38, 0.69]$$^{*}$ & 16 & 18 & 7 & 15 & 0.561 \\
-Osteoartrosis med. & 15 & 0.680 & 0.720 & 0.816 $[0.68, 0.93]$ & 8 & 4 & 7 & 37 & 0.593 \\
-Osteoartrosis lat. & 11 & 0.610 & 0.655 & 0.693 $[0.51, 0.87]$ & 5 & 9 & 6 & 36 & 0.400 \\
-Osteoartrosis PF & 20 & 0.589 & 0.618 & 0.704 $[0.55, 0.84]$ & 19 & 31 & 1 & 5 & 0.543 \\
-Derrame articular & 34 & 0.749 & 0.729 & 0.619 $[0.46, 0.77]$$^{*}$ & 31 & 19 & 3 & 3 & 0.738 \\
-Sinovitis & 25 & 0.697 & 0.648 & 0.672 $[0.52, 0.81]$ & 17 & 16 & 8 & 15 & 0.586 \\
-Quiste de Baker & 11 & 0.648 & 0.640 & 0.731 $[0.51, 0.91]$ & 6 & 12 & 5 & 33 & 0.414 \\
-Contusión ósea & 18 & 0.594 & 0.652 & 0.773 $[0.64, 0.90]$ & 17 & 25 & 1 & 13 & 0.567 \\
-Fractura & 17 & 0.605 & 0.689 & 0.813 $[0.67, 0.93]$ & 13 & 12 & 4 & 27 & 0.619 \\
+Lig.\ cruzado ant. & 23 & 16.5\% & 0.714 & 0.706 & 0.776 $[0.64, 0.89]$ & 20 & 17 & 3 & 16 & 0.667 \\
+Lig.\ colateral med. & 9 & 10.6\% & 0.496 & 0.520 & 0.638 $[0.44, 0.83]$$^{*}$ & 6 & 20 & 3 & 27 & 0.343 \\
+Menisco medial & 24 & 45.5\% & 0.611 & 0.680 & 0.734 $[0.59, 0.86]$ & 22 & 18 & 2 & 14 & 0.687 \\
+Menisco lateral & 23 & 26.0\% & 0.545 & 0.497 & 0.531 $[0.38, 0.69]$$^{*}$ & 16 & 18 & 7 & 15 & 0.561 \\
+Osteoartrosis med. & 15 & 7.9\% & 0.680 & 0.720 & 0.816 $[0.68, 0.93]$ & 8 & 4 & 7 & 37 & 0.593 \\
+Osteoartrosis lat. & 11 & 4.8\% & 0.610 & 0.655 & 0.693 $[0.51, 0.87]$ & 5 & 9 & 6 & 36 & 0.400 \\
+Osteoartrosis PF & 20 & 26.3\% & 0.589 & 0.618 & 0.704 $[0.55, 0.84]$ & 19 & 31 & 1 & 5 & 0.543 \\
+Derrame articular & 34 & 35.7\% & 0.749 & 0.729 & 0.619 $[0.46, 0.77]$$^{*}$ & 31 & 19 & 3 & 3 & 0.738 \\
+Sinovitis & 25 & 10.1\% & 0.697 & 0.648 & 0.672 $[0.52, 0.81]$ & 17 & 16 & 8 & 15 & 0.586 \\
+Quiste de Baker & 11 & 18.6\% & 0.648 & 0.640 & 0.731 $[0.51, 0.91]$ & 6 & 12 & 5 & 33 & 0.414 \\
+Contusión ósea & 18 & 14.4\% & 0.594 & 0.652 & 0.773 $[0.64, 0.90]$ & 17 & 25 & 1 & 13 & 0.567 \\
+Fractura & 17 & 7.6\% & 0.605 & 0.689 & 0.813 $[0.67, 0.93]$ & 13 & 12 & 4 & 27 & 0.619 \\
 \bottomrule
 \end{tabular}
 \end{table}

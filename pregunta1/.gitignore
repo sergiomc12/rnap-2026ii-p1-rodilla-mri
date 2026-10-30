@@ -69,3 +69,15 @@ paso6_informe/informe/~$*.docx
 !**/*.json
 !paso5_ablacion_gradcam/figuras/*.png
 !paso6_informe/informe/figuras/*.png
+
+# --- Archivos de trabajo / borrador (no se publican) ----------------------
+# CSV intermedios y logs de corridas exploratorias: dan imagen de borrador y se
+# regeneran con el pipeline. Van al final para ganarle a las reglas de arriba.
+paso2_preprocesamiento/*.PREVIO.csv
+paso2_preprocesamiento/_etq_conoa.csv
+paso2_preprocesamiento/cache_g64*.log
+paso3_modelos/corridas/*.log
+paso3_modelos/corridas/**/*.log
+# configuracion.json guarda rutas absolutas de una maquina; se ignora pese a la
+# regla general de conservar los JSON (por eso va despues de !**/*.json).
+paso3_modelos/corridas/**/configuracion.json
