@@ -1,0 +1,13 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+
+dispositivo: cuda
+
+  epoca  1/5 | train 0.4410 | val 0.4335 | AUC 0.6254 | 488s *
+  epoca  2/5 | train 0.4262 | val 0.4290 | AUC 0.6395 | 473s *
+  epoca  3/5 | train 0.4217 | val 0.4267 | AUC 0.6472 | 479s *
+  epoca  4/5 | train 0.4183 | val 0.4249 | AUC 0.6530 | 478s *
+  epoca  5/5 | train 0.4158 | val 0.4259 | AUC 0.6541 | 478s *
+
+mejor epoca 5 | AUC validacion 0.6541 | 40.0 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\plano_coronal_5ep

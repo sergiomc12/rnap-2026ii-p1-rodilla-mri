@@ -1,0 +1,32 @@
+D:\Backend\redesneuronales\pregunta1\paso3_modelos\entrenamiento.py:161: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:821.)
+  suma += float(perdida) * len(etiquetas)
+3415 estudios | entrenamiento=2688 validacion=671 prueba(dorados)=56
+modelo=inception_googlenet perdida=bce pooling=atencion params=6.3M
+
+dispositivo: cuda
+
+  epoca  1/25 | train 0.4782 | val 0.4689 | AUC 0.6296 | 83s *
+  epoca  2/25 | train 0.4580 | val 0.4926 | AUC 0.6480 | 83s *
+  epoca  3/25 | train 0.4530 | val 0.4650 | AUC 0.6789 | 77s *
+  epoca  4/25 | train 0.4511 | val 0.4562 | AUC 0.6815 | 78s *
+  epoca  5/25 | train 0.4444 | val 0.4522 | AUC 0.6911 | 79s *
+  epoca  6/25 | train 0.4411 | val 0.4572 | AUC 0.6942 | 79s *
+  epoca  7/25 | train 0.4376 | val 0.4541 | AUC 0.6893 | 79s
+  epoca  8/25 | train 0.4335 | val 0.4542 | AUC 0.7190 | 79s *
+  epoca  9/25 | train 0.4316 | val 0.4584 | AUC 0.7150 | 79s
+  epoca 10/25 | train 0.4259 | val 0.4511 | AUC 0.7161 | 79s
+  epoca 11/25 | train 0.4196 | val 0.4577 | AUC 0.7171 | 77s
+  epoca 12/25 | train 0.4164 | val 0.4450 | AUC 0.7238 | 73s *
+  epoca 13/25 | train 0.4106 | val 0.4460 | AUC 0.7265 | 74s *
+  epoca 14/25 | train 0.4046 | val 0.4482 | AUC 0.7280 | 74s *
+  epoca 15/25 | train 0.4015 | val 0.4467 | AUC 0.7351 | 74s *
+  epoca 16/25 | train 0.3949 | val 0.4229 | AUC 0.7545 | 74s *
+  epoca 17/25 | train 0.3898 | val 0.4419 | AUC 0.7431 | 74s
+  epoca 18/25 | train 0.3872 | val 0.4341 | AUC 0.7434 | 74s
+  epoca 19/25 | train 0.3790 | val 0.4517 | AUC 0.7449 | 74s
+  epoca 20/25 | train 0.3755 | val 0.4460 | AUC 0.7467 | 74s
+  epoca 21/25 | train 0.3679 | val 0.4293 | AUC 0.7492 | 74s
+
+mejor epoca 16 | AUC validacion 0.7545 | 26.9 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\googlenet_completo_80_20

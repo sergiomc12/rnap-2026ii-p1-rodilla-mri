@@ -1,0 +1,24 @@
+    26 tensores en RAM, 0.2 GB (uint8)
+    6 tensores en RAM, 0.1 GB (uint8)
+D:\Backend\redesneuronales\pregunta1\paso3_modelos\entrenamiento.py:163: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:821.)
+  suma += float(perdida) * len(etiquetas)
+33 estudios | entrenamiento=26 validacion=6 prueba(dorados)=1
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+
+dispositivo: cuda
+
+  epoca  1/60 | train 0.6992 | val 0.7709 | AUC 0.2444 | 5s *
+  epoca  2/60 | train 0.5664 | val 0.9514 | AUC 0.5185 | 4s *
+  epoca  3/60 | train 0.4669 | val 0.7655 | AUC 0.6148 | 4s *
+  epoca  4/60 | train 0.4966 | val 0.4290 | AUC 0.6815 | 4s *
+  epoca  5/60 | train 0.4411 | val 0.3337 | AUC 0.7185 | 4s *
+  epoca  6/60 | train 0.4330 | val 0.2952 | AUC 0.7556 | 4s *
+  epoca  7/60 | train 0.4540 | val 0.2659 | AUC 0.7556 | 4s
+  epoca  8/60 | train 0.4331 | val 0.2752 | AUC 0.7556 | 4s
+  epoca  9/60 | train 0.4159 | val 0.2898 | AUC 0.7556 | 4s
+  epoca 10/60 | train 0.4163 | val 0.3136 | AUC 0.6889 | 4s
+  epoca 11/60 | train 0.3923 | val 0.2770 | AUC 0.6222 | 4s
+
+mejor epoca 6 | AUC validacion 0.7556 | 0.8 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\inception_poretiqueta_g64_4407

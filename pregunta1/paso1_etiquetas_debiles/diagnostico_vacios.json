@@ -1,0 +1,71 @@
+{
+  "total_sin_etiqueta": 807,
+  "causas": {
+    "sin evidencia": 535,
+    "todo negado": 268,
+    "todo incierto": 4
+  },
+  "por_idioma": {
+    "nl": {
+      "sin evidencia": 19,
+      "todo negado": 7,
+      "todo incierto": 1
+    },
+    "tr": {
+      "sin evidencia": 133,
+      "todo incierto": 1,
+      "todo negado": 3
+    },
+    "el": {
+      "sin evidencia": 173,
+      "todo negado": 1
+    },
+    "en": {
+      "todo negado": 191,
+      "sin evidencia": 9
+    },
+    "hr": {
+      "sin evidencia": 33,
+      "todo negado": 4,
+      "todo incierto": 1
+    },
+    "es": {
+      "sin evidencia": 92,
+      "todo negado": 36,
+      "todo incierto": 1
+    },
+    "fr": {
+      "sin evidencia": 6,
+      "todo negado": 2
+    },
+    "de": {
+      "sin evidencia": 52,
+      "todo negado": 18
+    },
+    "bg": {
+      "todo negado": 6,
+      "sin evidencia": 18
+    }
+  },
+  "evidencia_descartada": {
+    "Effusion|negado": 224,
+    "Contusion|negado": 64,
+    "Fracture|negado": 72,
+    "Baker's|negado": 105,
+    "Medial Meniscus|incierto": 3,
+    "Fracture|incierto": 1,
+    "ACL|negado": 4,
+    "Synovitis|negado": 1,
+    "Medial Meniscus|negado": 9,
+    "PF OA|negado": 3,
+    "Lateral Meniscus|negado": 7,
+    "Medial OA|negado": 3,
+    "MCL|negado": 1,
+    "MCL|incierto": 1
+  },
+  "ejemplos": {
+    "sin evidencia": [],
+    "todo negado": [],
+    "todo incierto": []
+  }
+}

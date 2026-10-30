@@ -1,0 +1,127 @@
+{
+  "n_dorados": 58,
+  "etiquetas": [
+    {
+      "etiqueta": "ACL",
+      "tp": 16,
+      "fp": 8,
+      "fn": 8,
+      "tn": 26,
+      "acuerdo": 72.4,
+      "precision": 0.667,
+      "recall": 0.667
+    },
+    {
+      "etiqueta": "MCL",
+      "tp": 8,
+      "fp": 7,
+      "fn": 1,
+      "tn": 42,
+      "acuerdo": 86.2,
+      "precision": 0.533,
+      "recall": 0.889
+    },
+    {
+      "etiqueta": "Medial Meniscus",
+      "tp": 20,
+      "fp": 16,
+      "fn": 6,
+      "tn": 16,
+      "acuerdo": 62.1,
+      "precision": 0.556,
+      "recall": 0.769
+    },
+    {
+      "etiqueta": "Lateral Meniscus",
+      "tp": 16,
+      "fp": 15,
+      "fn": 7,
+      "tn": 20,
+      "acuerdo": 62.1,
+      "precision": 0.516,
+      "recall": 0.696
+    },
+    {
+      "etiqueta": "Medial OA",
+      "tp": 2,
+      "fp": 3,
+      "fn": 13,
+      "tn": 40,
+      "acuerdo": 72.4,
+      "precision": 0.4,
+      "recall": 0.133
+    },
+    {
+      "etiqueta": "Lateral OA",
+      "tp": 3,
+      "fp": 2,
+      "fn": 8,
+      "tn": 45,
+      "acuerdo": 82.8,
+      "precision": 0.6,
+      "recall": 0.273
+    },
+    {
+      "etiqueta": "PF OA",
+      "tp": 11,
+      "fp": 8,
+      "fn": 10,
+      "tn": 29,
+      "acuerdo": 69.0,
+      "precision": 0.579,
+      "recall": 0.524
+    },
+    {
+      "etiqueta": "Effusion",
+      "tp": 21,
+      "fp": 16,
+      "fn": 14,
+      "tn": 7,
+      "acuerdo": 48.3,
+      "precision": 0.568,
+      "recall": 0.6
+    },
+    {
+      "etiqueta": "Synovitis",
+      "tp": 10,
+      "fp": 4,
+      "fn": 17,
+      "tn": 27,
+      "acuerdo": 63.8,
+      "precision": 0.714,
+      "recall": 0.37
+    },
+    {
+      "etiqueta": "Baker's",
+      "tp": 8,
+      "fp": 9,
+      "fn": 4,
+      "tn": 37,
+      "acuerdo": 77.6,
+      "precision": 0.471,
+      "recall": 0.667
+    },
+    {
+      "etiqueta": "Contusion",
+      "tp": 15,
+      "fp": 13,
+      "fn": 4,
+      "tn": 26,
+      "acuerdo": 70.7,
+      "precision": 0.536,
+      "recall": 0.789
+    },
+    {
+      "etiqueta": "Fracture",
+      "tp": 14,
+      "fp": 11,
+      "fn": 4,
+      "tn": 29,
+      "acuerdo": 74.1,
+      "precision": 0.56,
+      "recall": 0.778
+    }
+  ],
+  "sobre_texto_traducido": true,
+  "acuerdo_macro": 70.1
+}

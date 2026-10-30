@@ -1,0 +1,124 @@
+{
+  "modelo": "inception",
+  "perdida": "bce",
+  "pooling": "atencion_por_etiqueta",
+  "preentrenado": true,
+  "aumentar": true,
+  "semilla": 42,
+  "seleccion": "pregunta1\\paso2_preprocesamiento\\estudios_4407.csv",
+  "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g64_axial",
+  "determinista": true,
+  "learning_rate": 0.0001,
+  "lote": 2,
+  "parametros_millones": 1.33,
+  "minutos": 39.9,
+  "mejor_epoca": 5,
+  "auc_validacion": 0.6407899629129625,
+  "epocas": [
+    {
+      "epoca": 1,
+      "perdida_entrenamiento": 0.44479126064427965,
+      "perdida_validacion": 0.4372962118395453,
+      "auc_macro": 0.59163006755297,
+      "auc_por_etiqueta": {
+        "ACL": 0.5673556867974853,
+        "MCL": 0.5476059294241112,
+        "Medial Meniscus": 0.6185962788326749,
+        "Lateral Meniscus": 0.6040756616996666,
+        "Medial OA": 0.5350877192982456,
+        "Lateral OA": 0.5534641215977377,
+        "PF OA": 0.5471416682670763,
+        "Effusion": 0.6447680502267178,
+        "Synovitis": 0.7303912148249828,
+        "Baker's": 0.6050683272790175,
+        "Contusion": 0.5767044863120642,
+        "Fracture": 0.5693016660758596
+      },
+      "segundos": 494.2
+    },
+    {
+      "epoca": 2,
+      "perdida_entrenamiento": 0.42819030680533116,
+      "perdida_validacion": 0.4321297793997445,
+      "auc_macro": 0.6283536890359979,
+      "auc_por_etiqueta": {
+        "ACL": 0.6313869308439702,
+        "MCL": 0.6614456250819887,
+        "Medial Meniscus": 0.6099677158999193,
+        "Lateral Meniscus": 0.6199768660270804,
+        "Medial OA": 0.5947439020085424,
+        "Lateral OA": 0.5965889006716154,
+        "PF OA": 0.5658984700083222,
+        "Effusion": 0.6886466689919777,
+        "Synovitis": 0.8032669869595058,
+        "Baker's": 0.635806953814219,
+        "Contusion": 0.5757780784844384,
+        "Fracture": 0.5567371696403954
+      },
+      "segundos": 479.5
+    },
+    {
+      "epoca": 3,
+      "perdida_entrenamiento": 0.4216786372164885,
+      "perdida_validacion": 0.42828307251935727,
+      "auc_macro": 0.6349009098532019,
+      "auc_por_etiqueta": {
+        "ACL": 0.6414174128405411,
+        "MCL": 0.6507936507936508,
+        "Medial Meniscus": 0.6240256361242088,
+        "Lateral Meniscus": 0.625399741443832,
+        "Medial OA": 0.5955028416110699,
+        "Lateral OA": 0.6108754565806528,
+        "PF OA": 0.5579188272197683,
+        "Effusion": 0.6847633996046971,
+        "Synovitis": 0.8129032258064516,
+        "Baker's": 0.6404860750735167,
+        "Contusion": 0.5862808368897678,
+        "Fracture": 0.5884438142502658
+      },
+      "segundos": 475.4
+    },
+    {
+      "epoca": 4,
+      "perdida_entrenamiento": 0.4196150229408823,
+      "perdida_validacion": 0.43159056414600344,
+      "auc_macro": 0.6338250829442618,
+      "auc_por_etiqueta": {
+        "ACL": 0.6323299676128786,
+        "MCL": 0.6577462941099305,
+        "Medial Meniscus": 0.6062614162524956,
+        "Lateral Meniscus": 0.6278492209294414,
+        "Medial OA": 0.6157294645063363,
+        "Lateral OA": 0.6142629904559915,
+        "PF OA": 0.5710197810639523,
+        "Effusion": 0.6714509940704569,
+        "Synovitis": 0.787920384351407,
+        "Baker's": 0.6376837917315343,
+        "Contusion": 0.6014260435099407,
+        "Fracture": 0.5822206467367758
+      },
+      "segundos": 471.6
+    },
+    {
+      "epoca": 5,
+      "perdida_entrenamiento": 0.416834600826447,
+      "perdida_validacion": 0.43175600909802664,
+      "auc_macro": 0.6407899629129625,
+      "auc_por_etiqueta": {
+        "ACL": 0.6497047056582206,
+        "MCL": 0.6655385019021383,
+        "Medial Meniscus": 0.6224247058323775,
+        "Lateral Meniscus": 0.6372116758522147,
+        "Medial OA": 0.5912492498852766,
+        "Lateral OA": 0.6276069282431955,
+        "PF OA": 0.5772101658024454,
+        "Effusion": 0.6816823625159865,
+        "Synovitis": 0.8166231983527796,
+        "Baker's": 0.6531049991350978,
+        "Contusion": 0.5904756948058707,
+        "Fracture": 0.5766473669699476
+      },
+      "segundos": 474.2
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=pregunta1\paso2_preprocesamiento\caches_ablacion\completo_g64_c192
+seleccion=pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=25 lote=2 lr=0.0001 paciencia=25 semilla=42 aumentar=True amp=False
+etiquetas_activas=las 12
+
+dispositivo: cuda
+reanudado desde C:\Users\odt054\AppData\Local\Temp\origen_ep35.pt
+  OJO: el checkpoint es del formato viejo y NO trae el estado del optimizador.
+  AdamW arranca con sus momentos en cero, asi que las primeras epocas pueden bajar antes de recuperar.
+
+  epoca 36/60 | train 0.3614 | val 0.4179 | AUC 0.7200 | 446s *
+  epoca 37/60 | train 0.3565 | val 0.4108 | AUC 0.7157 | 432s
+  epoca 38/60 | train 0.3563 | val 0.4098 | AUC 0.7204 | 436s *
+  epoca 39/60 | train 0.3554 | val 0.4081 | AUC 0.7220 | 447s *
+  epoca 40/60 | train 0.3508 | val 0.4180 | AUC 0.7130 | 459s
+  epoca 41/60 | train 0.3492 | val 0.4149 | AUC 0.7179 | 476s

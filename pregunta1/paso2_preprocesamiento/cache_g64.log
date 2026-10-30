@@ -1,0 +1,101 @@
+3415 estudios -> pregunta1\paso2_preprocesamiento\caches_ablacion\completo_g64_c192  (forma (64, 3, 224, 224))
+
+    50/3415 |   0.5 min | ETA  30.6 min
+   100/3415 |   0.8 min | ETA  26.7 min
+   150/3415 |   1.3 min | ETA  28.7 min
+   200/3415 |   2.0 min | ETA  31.4 min
+   250/3415 |   2.5 min | ETA  31.1 min
+   300/3415 |   3.0 min | ETA  30.9 min
+   350/3415 |   3.4 min | ETA  30.2 min
+   400/3415 |   3.8 min | ETA  28.8 min
+   450/3415 |   4.2 min | ETA  27.9 min
+   500/3415 |   4.6 min | ETA  27.0 min
+   550/3415 |   5.0 min | ETA  26.1 min
+   600/3415 |   5.4 min | ETA  25.2 min
+   650/3415 |   5.7 min | ETA  24.3 min
+   700/3415 |   6.1 min | ETA  23.7 min
+   750/3415 |   6.5 min | ETA  22.9 min
+   800/3415 |   6.8 min | ETA  22.3 min
+   850/3415 |   7.2 min | ETA  21.7 min
+   900/3415 |   7.6 min | ETA  21.2 min
+   950/3415 |   7.9 min | ETA  20.6 min
+  1000/3415 |   8.3 min | ETA  20.1 min
+  1050/3415 |   8.8 min | ETA  19.7 min
+  1100/3415 |   9.1 min | ETA  19.3 min
+  1150/3415 |   9.6 min | ETA  18.9 min
+  1200/3415 |  10.0 min | ETA  18.5 min
+  1250/3415 |  10.4 min | ETA  18.0 min
+  1300/3415 |  10.9 min | ETA  17.7 min
+  1350/3415 |  11.2 min | ETA  17.2 min
+  1400/3415 |  11.6 min | ETA  16.7 min
+  1450/3415 |  12.1 min | ETA  16.3 min
+  1500/3415 |  12.5 min | ETA  16.0 min
+  1550/3415 |  12.9 min | ETA  15.5 min
+  1600/3415 |  13.3 min | ETA  15.1 min
+  1650/3415 |  13.8 min | ETA  14.7 min
+  1700/3415 |  14.1 min | ETA  14.2 min
+  1750/3415 |  14.4 min | ETA  13.7 min
+  1800/3415 |  14.8 min | ETA  13.3 min
+  1850/3415 |  15.2 min | ETA  12.9 min
+  1900/3415 |  15.6 min | ETA  12.4 min
+  1950/3415 |  16.0 min | ETA  12.0 min
+  2000/3415 |  16.4 min | ETA  11.6 min
+  2050/3415 |  16.8 min | ETA  11.2 min
+  2100/3415 |  17.3 min | ETA  10.8 min
+  2150/3415 |  17.7 min | ETA  10.4 min
+  2200/3415 |  18.1 min | ETA  10.0 min
+  2250/3415 |  18.5 min | ETA   9.6 min
+  2300/3415 |  18.9 min | ETA   9.2 min
+  2350/3415 |  19.2 min | ETA   8.7 min
+  2400/3415 |  19.6 min | ETA   8.3 min
+  2450/3415 |  19.9 min | ETA   7.9 min
+  2500/3415 |  20.3 min | ETA   7.4 min
+  2550/3415 |  20.6 min | ETA   7.0 min
+  2600/3415 |  21.2 min | ETA   6.6 min
+  2650/3415 |  21.6 min | ETA   6.2 min
+  2700/3415 |  22.0 min | ETA   5.8 min
+  2750/3415 |  22.4 min | ETA   5.4 min
+  2800/3415 |  22.8 min | ETA   5.0 min
+  2850/3415 |  23.1 min | ETA   4.6 min
+  2900/3415 |  23.5 min | ETA   4.2 min
+  2950/3415 |  23.9 min | ETA   3.8 min
+  3000/3415 |  24.2 min | ETA   3.4 min
+  3050/3415 |  24.6 min | ETA   2.9 min
+  3100/3415 |  25.0 min | ETA   2.5 min
+  3150/3415 |  25.5 min | ETA   2.1 min
+  3200/3415 |  25.9 min | ETA   1.7 min
+  3250/3415 |  26.3 min | ETA   1.3 min
+  3300/3415 |  26.8 min | ETA   0.9 min
+  3350/3415 |  27.2 min | ETA   0.5 min
+  3400/3415 |  27.7 min | ETA   0.1 min
+
+procesados=3415 saltados=0 fallidos=0 | 133.22 GB en disco | 27.8 min
+   100/4149 |   0.2 min | ETA   7.0 min
+   950/4149 |   1.8 min | ETA   5.9 min
+  1150/4149 |   2.1 min | ETA   5.4 min
+  1200/4149 |   2.1 min | ETA   5.2 min
+  1300/4149 |   2.3 min | ETA   5.0 min
+  1550/4149 |   2.6 min | ETA   4.4 min
+  1900/4149 |   3.1 min | ETA   3.7 min
+  2350/4149 |   4.0 min | ETA   3.0 min
+  2450/4149 |   4.1 min | ETA   2.9 min
+  2500/4149 |   4.2 min | ETA   2.8 min
+  2550/4149 |   4.3 min | ETA   2.7 min
+  2650/4149 |   4.6 min | ETA   2.6 min
+  2750/4149 |   4.6 min | ETA   2.4 min
+  3050/4149 |   5.1 min | ETA   1.8 min
+  3300/4149 |   5.5 min | ETA   1.4 min
+  4000/4149 |   6.8 min | ETA   0.3 min
+
+procesados=734 saltados=3415 fallidos=0 | 159.88 GB en disco | 6.9 min
+4406 estudios -> pregunta1\paso2_preprocesamiento\caches_ablacion\completo_g64_c192  (forma (64, 3, 224, 224))
+
+   650/4406 |   1.0 min | ETA   5.6 min
+   800/4406 |   1.1 min | ETA   5.2 min
+  3500/4406 |   4.7 min | ETA   1.2 min
+  3600/4406 |   4.8 min | ETA   1.1 min
+  3800/4406 |   5.1 min | ETA   0.8 min
+4407 estudios -> pregunta1\paso2_preprocesamiento\caches_ablacion\completo_g64_c192  (forma (64, 3, 224, 224))
+
+
+procesados=5 saltados=4402 fallidos=0 | 169.83 GB en disco | 0.2 min

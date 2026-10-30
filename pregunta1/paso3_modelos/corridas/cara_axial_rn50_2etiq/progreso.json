@@ -1,0 +1,10 @@
+{
+  "epoca": 7,
+  "auc_validacion": 0.7584922319007318,
+  "auc_macro_doce": 0.5545923061799477,
+  "etiquetas_activas": [
+    "Lateral Meniscus",
+    "PF OA"
+  ],
+  "perdida_validacion": 0.5817737856363262
+}

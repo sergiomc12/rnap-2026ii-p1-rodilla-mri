@@ -1,0 +1,28 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=pregunta1\paso2_preprocesamiento\caches_ablacion\g64_axial
+seleccion=pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=25 lote=2 lr=0.0001 paciencia=25 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Synovitis', 'ACL']
+
+dispositivo: cuda
+
+  epoca  1/25 | train 0.3864 | val 0.3765 | AUC(2) 0.6774 | AUC(12) 0.5284 | 459s *
+  epoca  2/25 | train 0.3678 | val 0.3714 | AUC(2) 0.7043 | AUC(12) 0.5245 | 445s *
+  epoca  3/25 | train 0.3622 | val 0.3734 | AUC(2) 0.7041 | AUC(12) 0.5191 | 445s
+  epoca  4/25 | train 0.3594 | val 0.3782 | AUC(2) 0.6716 | AUC(12) 0.5332 | 443s
+  epoca  5/25 | train 0.3550 | val 0.3787 | AUC(2) 0.7104 | AUC(12) 0.5265 | 446s *
+  epoca  6/25 | train 0.3504 | val 0.3623 | AUC(2) 0.7202 | AUC(12) 0.5385 | 441s *
+  epoca  7/25 | train 0.3509 | val 0.3607 | AUC(2) 0.7277 | AUC(12) 0.5379 | 443s *
+  epoca  8/25 | train 0.3459 | val 0.3726 | AUC(2) 0.7103 | AUC(12) 0.5162 | 443s
+  epoca  9/25 | train 0.3438 | val 0.3631 | AUC(2) 0.7214 | AUC(12) 0.5336 | 444s
+  epoca 10/25 | train 0.3422 | val 0.3828 | AUC(2) 0.7226 | AUC(12) 0.5397 | 443s
+  epoca 11/25 | train 0.3390 | val 0.3596 | AUC(2) 0.7286 | AUC(12) 0.5393 | 443s *
+  epoca 12/25 | train 0.3401 | val 0.3588 | AUC(2) 0.7247 | AUC(12) 0.5448 | 443s
+  epoca 13/25 | train 0.3337 | val 0.3547 | AUC(2) 0.7347 | AUC(12) 0.5667 | 447s *
+  epoca 14/25 | train 0.3296 | val 0.3578 | AUC(2) 0.7408 | AUC(12) 0.5560 | 445s *
+  epoca 15/25 | train 0.3280 | val 0.3558 | AUC(2) 0.7344 | AUC(12) 0.5427 | 443s
+  epoca 16/25 | train 0.3227 | val 0.3652 | AUC(2) 0.7260 | AUC(12) 0.5442 | 444s
+  epoca 17/25 | train 0.3253 | val 0.3683 | AUC(2) 0.7326 | AUC(12) 0.5490 | 444s
+  epoca 18/25 | train 0.3225 | val 0.3620 | AUC(2) 0.7253 | AUC(12) 0.5460 | 444s
+  epoca 19/25 | train 0.3192 | val 0.3587 | AUC(2) 0.7335 | AUC(12) 0.5467 | 443s

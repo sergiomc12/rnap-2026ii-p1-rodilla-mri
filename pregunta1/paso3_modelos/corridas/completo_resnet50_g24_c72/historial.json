@@ -1,0 +1,250 @@
+{
+  "modelo": "resnet50",
+  "perdida": "bce",
+  "pooling": "atencion",
+  "preentrenado": true,
+  "aumentar": true,
+  "semilla": 42,
+  "seleccion": "pregunta1\\paso2_preprocesamiento\\estudios_completo.csv",
+  "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\completo_g24_c72",
+  "determinista": true,
+  "learning_rate": 0.0001,
+  "lote": 8,
+  "parametros_millones": 24.06,
+  "minutos": 36.3,
+  "mejor_epoca": 6,
+  "auc_validacion": 0.7931819137583335,
+  "epocas": [
+    {
+      "epoca": 1,
+      "perdida_entrenamiento": 0.4636340006476357,
+      "perdida_validacion": 0.4509241044432502,
+      "auc_macro": 0.7276080246796316,
+      "auc_por_etiqueta": {
+        "ACL": 0.7630085495283019,
+        "MCL": 0.6533090151120375,
+        "Medial Meniscus": 0.6478505535055351,
+        "Lateral Meniscus": 0.669594340927503,
+        "Medial OA": 0.7288631377622771,
+        "Lateral OA": 0.8123499806426636,
+        "PF OA": 0.7053782839102491,
+        "Effusion": 0.7789878807730102,
+        "Synovitis": 0.8362755847953216,
+        "Baker's": 0.6719334823783567,
+        "Contusion": 0.7311198485510412,
+        "Fracture": 0.7326256382692824
+      },
+      "segundos": 143.1
+    },
+    {
+      "epoca": 2,
+      "perdida_entrenamiento": 0.42128639269088,
+      "perdida_validacion": 0.42377632412221145,
+      "auc_macro": 0.7662083064212548,
+      "auc_por_etiqueta": {
+        "ACL": 0.7874164701257862,
+        "MCL": 0.6916970644432864,
+        "Medial Meniscus": 0.7006457564575646,
+        "Lateral Meniscus": 0.7287834179691359,
+        "Medial OA": 0.7860437644146931,
+        "Lateral OA": 0.8413472706155632,
+        "PF OA": 0.7553839215244109,
+        "Effusion": 0.7926902500272955,
+        "Synovitis": 0.863249269005848,
+        "Baker's": 0.6977191087442538,
+        "Contusion": 0.7526139507790884,
+        "Fracture": 0.7969094329481322
+      },
+      "segundos": 136.4
+    },
+    {
+      "epoca": 3,
+      "perdida_entrenamiento": 0.39297453389458714,
+      "perdida_validacion": 0.42004158537718295,
+      "auc_macro": 0.7769490360739036,
+      "auc_por_etiqueta": {
+        "ACL": 0.7933986831761006,
+        "MCL": 0.7024318221295813,
+        "Medial Meniscus": 0.7236992619926199,
+        "Lateral Meniscus": 0.7505285621134581,
+        "Medial OA": 0.7933003318895202,
+        "Lateral OA": 0.8511420828494,
+        "PF OA": 0.7725335438042621,
+        "Effusion": 0.8210503330057867,
+        "Synovitis": 0.8673245614035088,
+        "Baker's": 0.7263056092843327,
+        "Contusion": 0.7619047619047619,
+        "Fracture": 0.7597688793335124
+      },
+      "segundos": 143.8
+    },
+    {
+      "epoca": 4,
+      "perdida_entrenamiento": 0.3688911860365243,
+      "perdida_validacion": 0.4322173524364807,
+      "auc_macro": 0.7820773264004705,
+      "auc_por_etiqueta": {
+        "ACL": 0.7992334905660378,
+        "MCL": 0.7161368768455793,
+        "Medial Meniscus": 0.7269188191881919,
+        "Lateral Meniscus": 0.7601809954751131,
+        "Medial OA": 0.7778590313326208,
+        "Lateral OA": 0.8445605884630275,
+        "PF OA": 0.7758597361596572,
+        "Effusion": 0.7944553626669578,
+        "Synovitis": 0.8380847953216374,
+        "Baker's": 0.7516139566429701,
+        "Contusion": 0.7959662152322703,
+        "Fracture": 0.804058048911583
+      },
+      "segundos": 228.3
+    },
+    {
+      "epoca": 5,
+      "perdida_entrenamiento": 0.3440755571549137,
+      "perdida_validacion": 0.431098641297501,
+      "auc_macro": 0.7763048193827707,
+      "auc_por_etiqueta": {
+        "ACL": 0.7901066234276729,
+        "MCL": 0.716206357477853,
+        "Medial Meniscus": 0.7022047970479705,
+        "Lateral Meniscus": 0.7513386946985714,
+        "Medial OA": 0.7888845136974743,
+        "Lateral OA": 0.8234223770809137,
+        "PF OA": 0.7586988386514827,
+        "Effusion": 0.8163100047312297,
+        "Synovitis": 0.8650584795321637,
+        "Baker's": 0.7488507623904143,
+        "Contusion": 0.8027086063783312,
+        "Fracture": 0.7518677774791722
+      },
+      "segundos": 218.7
+    },
+    {
+      "epoca": 6,
+      "perdida_entrenamiento": 0.3154129942967778,
+      "perdida_validacion": 0.4067512887423156,
+      "auc_macro": 0.7931819137583335,
+      "auc_por_etiqueta": {
+        "ACL": 0.8210986635220126,
+        "MCL": 0.6880667014069828,
+        "Medial Meniscus": 0.7412730627306273,
+        "Lateral Meniscus": 0.7729554031891561,
+        "Medial OA": 0.7990662091466502,
+        "Lateral OA": 0.8639179248935347,
+        "PF OA": 0.764381553726463,
+        "Effusion": 0.8242803071659934,
+        "Synovitis": 0.8885964912280702,
+        "Baker's": 0.7971564219146424,
+        "Contusion": 0.7780835881753313,
+        "Fracture": 0.7793066380005375
+      },
+      "segundos": 222.4
+    },
+    {
+      "epoca": 7,
+      "perdida_entrenamiento": 0.28570184470819576,
+      "perdida_validacion": 0.4343374207193912,
+      "auc_macro": 0.7842161719156276,
+      "auc_por_etiqueta": {
+        "ACL": 0.7901680424528302,
+        "MCL": 0.6893694632621157,
+        "Medial Meniscus": 0.7158856088560885,
+        "Lateral Meniscus": 0.7534924618150922,
+        "Medial OA": 0.7976598976205209,
+        "Lateral OA": 0.8348819202477739,
+        "PF OA": 0.7790731762318187,
+        "Effusion": 0.8210230374495032,
+        "Synovitis": 0.857108918128655,
+        "Baker's": 0.7692983998593282,
+        "Contusion": 0.7893840104849279,
+        "Fracture": 0.8132491265788766
+      },
+      "segundos": 215.8
+    },
+    {
+      "epoca": 8,
+      "perdida_entrenamiento": 0.2538166434858881,
+      "perdida_validacion": 0.4438088442103163,
+      "auc_macro": 0.7826876835834581,
+      "auc_por_etiqueta": {
+        "ACL": 0.8085077633647799,
+        "MCL": 0.6877192982456141,
+        "Medial Meniscus": 0.733570110701107,
+        "Lateral Meniscus": 0.7486810646327728,
+        "Medial OA": 0.7915002531360747,
+        "Lateral OA": 0.8315137437088657,
+        "PF OA": 0.7730409290788138,
+        "Effusion": 0.8207136878116242,
+        "Synovitis": 0.8757127192982456,
+        "Baker's": 0.759602100027632,
+        "Contusion": 0.7791320809669433,
+        "Fracture": 0.7825584520290244
+      },
+      "segundos": 213.3
+    },
+    {
+      "epoca": 9,
+      "perdida_entrenamiento": 0.22303508117883689,
+      "perdida_validacion": 0.47610368503010575,
+      "auc_macro": 0.7710559693942381,
+      "auc_por_etiqueta": {
+        "ACL": 0.7727987421383647,
+        "MCL": 0.6511203751954143,
+        "Medial Meniscus": 0.7269649446494465,
+        "Lateral Meniscus": 0.7364500385306961,
+        "Medial OA": 0.768886763795916,
+        "Lateral OA": 0.821564072783585,
+        "PF OA": 0.7540872702672229,
+        "Effusion": 0.8213869781999491,
+        "Synovitis": 0.8706140350877193,
+        "Baker's": 0.7886156396794695,
+        "Contusion": 0.7600698995194408,
+        "Fracture": 0.7801128728836334
+      },
+      "segundos": 219.6
+    },
+    {
+      "epoca": 10,
+      "perdida_entrenamiento": 0.19355037527912783,
+      "perdida_validacion": 0.46966844024317095,
+      "auc_macro": 0.773754509712837,
+      "auc_por_etiqueta": {
+        "ACL": 0.8052771226415094,
+        "MCL": 0.692791384401598,
+        "Medial Meniscus": 0.7236992619926199,
+        "Lateral Meniscus": 0.7241498547689146,
+        "Medial OA": 0.7769308657253755,
+        "Lateral OA": 0.8039101819589625,
+        "PF OA": 0.7363626113428797,
+        "Effusion": 0.8094133275102813,
+        "Synovitis": 0.8681652046783626,
+        "Baker's": 0.770127358135095,
+        "Contusion": 0.8019076743847386,
+        "Fracture": 0.772319269013706
+      },
+      "segundos": 217.3
+    },
+    {
+      "epoca": 11,
+      "perdida_entrenamiento": 0.15951983341281967,
+      "perdida_validacion": 0.5118495915223874,
+      "auc_macro": 0.7652593490301841,
+      "auc_por_etiqueta": {
+        "ACL": 0.8034714033018868,
+        "MCL": 0.6679694285217995,
+        "Medial Meniscus": 0.7313837638376384,
+        "Lateral Meniscus": 0.7429409788772748,
+        "Medial OA": 0.758311301119424,
+        "Lateral OA": 0.7976771196283391,
+        "PF OA": 0.7593866275792085,
+        "Effusion": 0.823315864177312,
+        "Synovitis": 0.8648391812865497,
+        "Baker's": 0.7578185837373458,
+        "Contusion": 0.7672637250618902,
+        "Fracture": 0.7087342112335394
+      },
+      "segundos": 218.6
+    }
+  ]
+}

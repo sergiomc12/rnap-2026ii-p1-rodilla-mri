@@ -1,0 +1,33 @@
+D:\Backend\redesneuronales\pregunta1\paso3_modelos\entrenamiento.py:161: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:821.)
+  suma += float(perdida) * len(etiquetas)
+3415 estudios | entrenamiento=2688 validacion=671 prueba(dorados)=56
+modelo=inception perdida=bce pooling=atencion params=0.7M
+
+dispositivo: cuda
+
+  epoca  1/25 | train 0.4829 | val 0.4732 | AUC 0.6331 | 54s *
+  epoca  2/25 | train 0.4659 | val 0.4710 | AUC 0.6544 | 48s *
+  epoca  3/25 | train 0.4603 | val 0.4758 | AUC 0.6377 | 48s
+  epoca  4/25 | train 0.4571 | val 0.4623 | AUC 0.6683 | 51s *
+  epoca  5/25 | train 0.4550 | val 0.4554 | AUC 0.6809 | 51s *
+  epoca  6/25 | train 0.4523 | val 0.4600 | AUC 0.6741 | 51s
+  epoca  7/25 | train 0.4482 | val 0.4688 | AUC 0.6852 | 48s *
+  epoca  8/25 | train 0.4449 | val 0.4550 | AUC 0.6903 | 48s *
+  epoca  9/25 | train 0.4408 | val 0.4567 | AUC 0.6812 | 48s
+  epoca 10/25 | train 0.4406 | val 0.4545 | AUC 0.7020 | 48s *
+  epoca 11/25 | train 0.4376 | val 0.4466 | AUC 0.7123 | 48s *
+  epoca 12/25 | train 0.4350 | val 0.4498 | AUC 0.7105 | 48s
+  epoca 13/25 | train 0.4319 | val 0.4497 | AUC 0.7149 | 48s *
+  epoca 14/25 | train 0.4299 | val 0.4512 | AUC 0.7120 | 49s
+  epoca 15/25 | train 0.4279 | val 0.4437 | AUC 0.7209 | 48s *
+  epoca 16/25 | train 0.4243 | val 0.4400 | AUC 0.7277 | 48s *
+  epoca 17/25 | train 0.4226 | val 0.4901 | AUC 0.7289 | 49s *
+  epoca 18/25 | train 0.4180 | val 0.4495 | AUC 0.7251 | 48s
+  epoca 19/25 | train 0.4169 | val 0.4633 | AUC 0.7168 | 48s
+  epoca 20/25 | train 0.4129 | val 0.4457 | AUC 0.7205 | 48s
+  epoca 21/25 | train 0.4115 | val 0.5040 | AUC 0.7288 | 49s
+  epoca 22/25 | train 0.4090 | val 0.4642 | AUC 0.7188 | 52s
+
+mejor epoca 17 | AUC validacion 0.7289 | 18.0 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\inception_completo_80_20

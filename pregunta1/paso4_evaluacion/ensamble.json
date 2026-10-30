@@ -1,0 +1,27 @@
+{
+  "miembros": {
+    "completo_resnet50_g08_c24_promedio": 0.7216664964886602,
+    "completo_resnet50_g08_c24": 0.6931228394407346,
+    "completo_inception_g08_c24": 0.6693291405544622
+  },
+  "correlaciones": {
+    "completo_resnet50_g08_c24_promedio|completo_resnet50_g08_c24": 0.7579253908418209,
+    "completo_resnet50_g08_c24_promedio|completo_inception_g08_c24": 0.4525561840837538,
+    "completo_resnet50_g08_c24|completo_inception_g08_c24": 0.5038170098107121
+  },
+  "media_probabilidades": {
+    "auc": 0.7268915367265308,
+    "ic95": [
+      0.6770756044443144,
+      0.7724159647662098
+    ]
+  },
+  "media_rangos": {
+    "auc": 0.722604906095801,
+    "ic95": [
+      0.6712198358752302,
+      0.7700820660489344
+    ]
+  },
+  "mejor_miembro": 0.7216664964886602
+}

@@ -1,0 +1,36 @@
+D:\Backend\redesneuronales\pregunta1\paso3_modelos\entrenamiento.py:161: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:821.)
+  suma += float(perdida) * len(etiquetas)
+241 estudios | entrenamiento=148 validacion=37 prueba(dorados)=56
+modelo=inception_googlenet perdida=bce pooling=atencion params=6.3M
+
+dispositivo: cuda
+
+  epoca  1/25 | train 0.6559 | val 0.6488 | AUC 0.5076 | 8s *
+  epoca  2/25 | train 0.5760 | val 0.6774 | AUC 0.5116 | 7s *
+  epoca  3/25 | train 0.5514 | val 0.6472 | AUC 0.4919 | 8s
+  epoca  4/25 | train 0.5570 | val 0.6034 | AUC 0.5178 | 7s *
+  epoca  5/25 | train 0.5378 | val 0.5942 | AUC 0.5594 | 7s *
+  epoca  6/25 | train 0.5219 | val 0.5699 | AUC 0.5939 | 8s *
+  epoca  7/25 | train 0.5215 | val 0.6477 | AUC 0.5308 | 7s
+  epoca  8/25 | train 0.5095 | val 0.7651 | AUC 0.5990 | 7s *
+  epoca  9/25 | train 0.4948 | val 0.6183 | AUC 0.5794 | 8s
+  epoca 10/25 | train 0.5031 | val 0.6370 | AUC 0.5488 | 8s
+  epoca 11/25 | train 0.4868 | val 0.5985 | AUC 0.5477 | 7s
+  epoca 12/25 | train 0.4760 | val 0.6636 | AUC 0.6003 | 8s *
+  epoca 13/25 | train 0.4650 | val 0.6557 | AUC 0.5970 | 7s
+  epoca 14/25 | train 0.4477 | val 0.6759 | AUC 0.5720 | 8s
+  epoca 15/25 | train 0.4647 | val 0.8041 | AUC 0.6044 | 7s *
+  epoca 16/25 | train 0.4412 | val 0.5978 | AUC 0.6202 | 8s *
+  epoca 17/25 | train 0.4274 | val 0.7265 | AUC 0.5619 | 8s
+  epoca 18/25 | train 0.4458 | val 0.7959 | AUC 0.5892 | 7s
+  epoca 19/25 | train 0.4284 | val 0.7027 | AUC 0.5715 | 7s
+  epoca 20/25 | train 0.4212 | val 0.7999 | AUC 0.6314 | 7s *
+  epoca 21/25 | train 0.3929 | val 0.6033 | AUC 0.5892 | 8s
+  epoca 22/25 | train 0.3923 | val 0.7458 | AUC 0.6453 | 8s *
+  epoca 23/25 | train 0.3817 | val 0.6248 | AUC 0.6186 | 7s
+  epoca 24/25 | train 0.3673 | val 0.8865 | AUC 0.6104 | 8s
+  epoca 25/25 | train 0.3724 | val 1.0059 | AUC 0.6045 | 8s
+
+mejor epoca 22 | AUC validacion 0.6453 | 3.2 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\googlenet_573

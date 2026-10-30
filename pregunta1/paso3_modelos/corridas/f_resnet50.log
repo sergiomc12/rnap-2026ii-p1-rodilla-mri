@@ -1,0 +1,8 @@
+usage: entrenar.py [-h] --modelo {inception,inception_googlenet,resnet50}
+                   [--perdida {bce,bce_ponderada,focal}]
+                   [--pooling {atencion,atencion_sin_compuerta,promedio}]
+                   [--epocas EPOCAS] [--lote LOTE]
+                   [--learning-rate LEARNING_RATE] [--semilla SEMILLA]
+                   [--sin-aumentar] [--sin-preentrenar] [--etiqueta ETIQUETA]
+                   [--salida SALIDA] [--seleccion SELECCION] [--cache CACHE]
+entrenar.py: error: argument --pooling: invalid choice: 'atencion_por_etiqueta' (choose from atencion, atencion_sin_compuerta, promedio)

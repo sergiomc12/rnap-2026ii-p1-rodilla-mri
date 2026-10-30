@@ -1,0 +1,19 @@
+D:\Backend\redesneuronales\pregunta1\paso3_modelos\entrenamiento.py:161: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:821.)
+  suma += float(perdida) * len(etiquetas)
+4406 estudios | entrenamiento=3479 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+
+dispositivo: cuda
+
+  epoca  1/25 | train 0.4439 | val 0.4313 | AUC 0.6455 | 1891s *
+  epoca  2/25 | train 0.4300 | val 0.4268 | AUC 0.6537 | 1587s *
+  epoca  3/25 | train 0.4250 | val 0.4226 | AUC 0.6663 | 1516s *
+  epoca  4/25 | train 0.4212 | val 0.4215 | AUC 0.6706 | 1543s *
+  epoca  5/25 | train 0.4194 | val 0.4171 | AUC 0.6803 | 1289s *
+  epoca  6/25 | train 0.4169 | val 0.4175 | AUC 0.6766 | 1030s
+  epoca  7/25 | train 0.4152 | val 0.4162 | AUC 0.6809 | 1034s *
+  epoca  8/25 | train 0.4127 | val 0.4154 | AUC 0.6797 | 1047s
+  epoca  9/25 | train 0.4107 | val 0.4193 | AUC 0.6823 | 1516s *
+  epoca 10/25 | train 0.4106 | val 0.4166 | AUC 0.6778 | 1347s
+  epoca 11/25 | train 0.4081 | val 0.4134 | AUC 0.6937 | 1097s *

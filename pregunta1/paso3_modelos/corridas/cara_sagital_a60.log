@@ -1,0 +1,68 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=pregunta1\paso2_preprocesamiento\caches_ablacion\completo_g64_c192
+seleccion=pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=35 lote=2 lr=0.0001 paciencia=60 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Effusion', 'MCL', 'Contusion', 'Lateral OA', "Baker's", 'Fracture', 'Medial Meniscus', 'Medial OA']
+
+dispositivo: cuda
+reanudado desde C:\Users\odt054\AppData\Local\Temp\origen_caras\sagital.pt
+  OJO: el checkpoint es del formato viejo y NO trae el estado del optimizador.
+  AdamW arranca con sus momentos en cero, asi que las primeras epocas pueden bajar antes de recuperar.
+
+  epoca 26/60 | train 0.3592 | val 0.3926 | AUC(8) 0.7064 | AUC(12) 0.6433 | 438s *
+  epoca 27/60 | train 0.3544 | val 0.3902 | AUC(8) 0.7104 | AUC(12) 0.6318 | 445s *
+  epoca 28/60 | train 0.3558 | val 0.3854 | AUC(8) 0.7219 | AUC(12) 0.6320 | 446s *
+  epoca 29/60 | train 0.3541 | val 0.3880 | AUC(8) 0.7147 | AUC(12) 0.6432 | 445s
+  epoca 30/60 | train 0.3502 | val 0.3873 | AUC(8) 0.7046 | AUC(12) 0.6305 | 446s
+  epoca 31/60 | train 0.3483 | val 0.3863 | AUC(8) 0.7112 | AUC(12) 0.6363 | 443s
+  epoca 32/60 | train 0.3472 | val 0.3852 | AUC(8) 0.7168 | AUC(12) 0.6362 | 446s
+  epoca 33/60 | train 0.3461 | val 0.3871 | AUC(8) 0.7173 | AUC(12) 0.6346 | 446s
+  epoca 34/60 | train 0.3416 | val 0.3848 | AUC(8) 0.7060 | AUC(12) 0.6240 | 448s
+  epoca 35/60 | train 0.3393 | val 0.3846 | AUC(8) 0.7236 | AUC(12) 0.6414 | 445s *
+  epoca 36/60 | train 0.3390 | val 0.3955 | AUC(8) 0.7206 | AUC(12) 0.6351 | 447s
+  epoca 37/60 | train 0.3372 | val 0.3860 | AUC(8) 0.7109 | AUC(12) 0.6282 | 445s
+  epoca 38/60 | train 0.3360 | val 0.3856 | AUC(8) 0.7245 | AUC(12) 0.6314 | 447s *
+  epoca 39/60 | train 0.3312 | val 0.4003 | AUC(8) 0.7176 | AUC(12) 0.6321 | 442s
+  epoca 40/60 | train 0.3279 | val 0.3878 | AUC(8) 0.7194 | AUC(12) 0.6284 | 444s
+  epoca 41/60 | train 0.3255 | val 0.3847 | AUC(8) 0.7223 | AUC(12) 0.6308 | 445s
+
+--- reintento: epocas 39-60, desde AUC 0.7245 ---
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\caches_ablacion\completo_g64_c192
+seleccion=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=22 lote=2 lr=0.0001 paciencia=60 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Effusion', 'MCL', 'Contusion', 'Lateral OA', "Baker's", 'Fracture', 'Medial Meniscus', 'Medial OA']
+
+dispositivo: cuda
+reanudado desde D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_sagital_a60\pesos.pt
+  con estado del optimizador (venia de la epoca 38)
+
+  epoca 39/60 | train 0.3307 | val 0.3851 | AUC(8) 0.7212 | AUC(12) 0.6429 | 458s
+  epoca 40/60 | train 0.3229 | val 0.3963 | AUC(8) 0.7078 | AUC(12) 0.6215 | 440s
+  epoca 41/60 | train 0.3233 | val 0.3930 | AUC(8) 0.7265 | AUC(12) 0.6306 | 444s *
+  epoca 42/60 | train 0.3211 | val 0.3989 | AUC(8) 0.7213 | AUC(12) 0.6414 | 444s
+  epoca 43/60 | train 0.3151 | val 0.3925 | AUC(8) 0.7128 | AUC(12) 0.6329 | 448s
+  epoca 44/60 | train 0.3138 | val 0.3966 | AUC(8) 0.7212 | AUC(12) 0.6428 | 445s
+  epoca 45/60 | train 0.3116 | val 0.3938 | AUC(8) 0.7244 | AUC(12) 0.6412 | 444s
+  epoca 46/60 | train 0.3077 | val 0.4038 | AUC(8) 0.7127 | AUC(12) 0.6301 | 445s
+  epoca 47/60 | train 0.3040 | val 0.3953 | AUC(8) 0.7085 | AUC(12) 0.6289 | 447s
+  epoca 48/60 | train 0.2989 | val 0.4054 | AUC(8) 0.7196 | AUC(12) 0.6388 | 445s
+  epoca 49/60 | train 0.2986 | val 0.4147 | AUC(8) 0.7310 | AUC(12) 0.6409 | 445s *
+  epoca 50/60 | train 0.2939 | val 0.4092 | AUC(8) 0.7140 | AUC(12) 0.6294 | 581s
+  epoca 51/60 | train 0.2920 | val 0.4038 | AUC(8) 0.7184 | AUC(12) 0.6312 | 448s
+  epoca 52/60 | train 0.2932 | val 0.4156 | AUC(8) 0.7190 | AUC(12) 0.6324 | 444s
+  epoca 53/60 | train 0.2917 | val 0.4106 | AUC(8) 0.7157 | AUC(12) 0.6344 | 445s
+  epoca 54/60 | train 0.2887 | val 0.3998 | AUC(8) 0.7339 | AUC(12) 0.6440 | 442s *
+  epoca 55/60 | train 0.2832 | val 0.4261 | AUC(8) 0.7222 | AUC(12) 0.6384 | 457s
+  epoca 56/60 | train 0.2807 | val 0.4303 | AUC(8) 0.7242 | AUC(12) 0.6372 | 446s
+  epoca 57/60 | train 0.2792 | val 0.4096 | AUC(8) 0.7317 | AUC(12) 0.6524 | 444s
+  epoca 58/60 | train 0.2702 | val 0.4188 | AUC(8) 0.7233 | AUC(12) 0.6388 | 443s
+  epoca 59/60 | train 0.2731 | val 0.4297 | AUC(8) 0.7241 | AUC(12) 0.6385 | 448s
+  epoca 60/60 | train 0.2662 | val 0.4371 | AUC(8) 0.7157 | AUC(12) 0.6250 | 444s
+
+mejor epoca 54 | AUC validacion 0.7339 | 165.7 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_sagital_a60
+
+--- reintento: epocas 55-60, desde AUC 0.7339 ---

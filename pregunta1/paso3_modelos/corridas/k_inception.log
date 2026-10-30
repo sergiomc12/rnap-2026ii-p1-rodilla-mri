@@ -1,0 +1,19 @@
+    precargando 500/3480 (4.5 GB)
+    precargando 1000/3480 (9.0 GB)
+    precargando 1500/3480 (13.5 GB)
+    precargando 2000/3480 (17.9 GB)
+    precargando 2500/3480 (22.4 GB)
+    precargando 3000/3480 (26.9 GB)
+    3480 tensores en RAM, 31.2 GB (uint8)
+    precargando 500/869 (4.5 GB)
+    869 tensores en RAM, 7.8 GB (uint8)
+D:\Backend\redesneuronales\pregunta1\paso3_modelos\entrenamiento.py:163: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:821.)
+  suma += float(perdida) * len(etiquetas)
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+
+dispositivo: cuda
+
+  epoca  1/60 | train 0.4441 | val 0.4383 | AUC 0.6316 | 543s *
+  epoca  2/60 | train 0.4281 | val 0.4290 | AUC 0.6534 | 558s *

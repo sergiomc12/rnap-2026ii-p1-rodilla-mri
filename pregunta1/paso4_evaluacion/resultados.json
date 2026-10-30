@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "rn_comp_ref",
+    "modelo": "resnet50",
+    "perdida": "bce",
+    "pooling": "atencion",
+    "parametros_millones": 24.06,
+    "auc_validacion": 0.8027799309913283,
+    "auc_dorados": 0.7432101874411857,
+    "ic95": [
+      0.6981683624057737,
+      0.7869569881111479
+    ],
+    "auc_por_etiqueta": {
+      "ACL": 0.8063241106719368,
+      "MCL": 0.5981087470449172,
+      "Medial Meniscus": 0.8854166666666666,
+      "Lateral Meniscus": 0.6073781291172595,
+      "Medial OA": 0.8471544715447155,
+      "Lateral OA": 0.7111111111111111,
+      "PF OA": 0.7291666666666666,
+      "Effusion": 0.5949197860962567,
+      "Synovitis": 0.6709677419354839,
+      "Baker's": 0.7616161616161616,
+      "Contusion": 0.8421052631578947,
+      "Fracture": 0.8642533936651584
+    },
+    "etiquetas_indefinidas": 0,
+    "umbral": 0.25,
+    "precision": 0.5613598034719391,
+    "recall": 0.669368729924996,
+    "f1": 0.5732028551984333
+  }
+]

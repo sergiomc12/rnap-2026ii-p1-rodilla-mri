@@ -1,0 +1,87 @@
+[
+  {
+    "descripcion": "entregable #2: las dos arquitecturas",
+    "a": "inception_bce_atencion",
+    "b": "resnet50_bce_atencion",
+    "auc_a": 0.628138638586973,
+    "auc_b": 0.6461416927469444,
+    "delta": -0.018003054159971388,
+    "bajo": -0.09774786391690193,
+    "alto": 0.0579795886734118,
+    "probabilidad_a_mejor": 0.342,
+    "significativa": false
+  },
+  {
+    "descripcion": "ablacion: pooling por media vs. atencion",
+    "a": "resnet50_promedio",
+    "b": "resnet50_bce_atencion",
+    "auc_a": 0.7084941812529492,
+    "auc_b": 0.6461416927469444,
+    "delta": 0.06235248850600472,
+    "bajo": -0.0009623600175501235,
+    "alto": 0.12832283539547418,
+    "probabilidad_a_mejor": 0.972,
+    "significativa": false
+  },
+  {
+    "descripcion": "ablacion: con vs. sin pesos de ImageNet",
+    "a": "resnet50_bce_atencion",
+    "b": "resnet50_sin_imagenet",
+    "auc_a": 0.6461416927469444,
+    "auc_b": 0.5622756061766063,
+    "delta": 0.08386608657033812,
+    "bajo": 0.0017790068043850304,
+    "alto": 0.1645504222448545,
+    "probabilidad_a_mejor": 0.978,
+    "significativa": true
+  },
+  {
+    "descripcion": "ablacion: focal vs. BCE (con atencion)",
+    "a": "resnet50_focal",
+    "b": "resnet50_bce_atencion",
+    "auc_a": 0.621620777215612,
+    "auc_b": 0.6461416927469444,
+    "delta": -0.0245209155313324,
+    "bajo": -0.08140619744352151,
+    "alto": 0.034486729325651,
+    "probabilidad_a_mejor": 0.203,
+    "significativa": false
+  },
+  {
+    "descripcion": "ablacion: focal vs. BCE (con media)",
+    "a": "resnet50_promedio_focal",
+    "b": "resnet50_promedio",
+    "auc_a": 0.6922426582458288,
+    "auc_b": 0.7084941812529492,
+    "delta": -0.016251523007120405,
+    "bajo": -0.05054495441430151,
+    "alto": 0.016273013424302207,
+    "probabilidad_a_mejor": 0.159,
+    "significativa": false
+  },
+  {
+    "descripcion": "desbalance: BCE ponderada vs. BCE",
+    "a": "resnet50_promedio_ponderada",
+    "b": "resnet50_promedio",
+    "auc_a": 0.6991983900496402,
+    "auc_b": 0.7084941812529492,
+    "delta": -0.009295791203308923,
+    "bajo": -0.047173978897609437,
+    "alto": 0.027056684047360502,
+    "probabilidad_a_mejor": 0.309,
+    "significativa": false
+  },
+  {
+    "descripcion": "ablacion: plano sagital vs. coronal",
+    "a": "resnet50_promedio",
+    "b": "resnet50_promedio_coronal",
+    "auc_a": 0.7154649634542452,
+    "auc_b": 0.6590175290831014,
+    "delta": 0.056447434371143745,
+    "bajo": 0.004997836388587529,
+    "alto": 0.1083936612066706,
+    "probabilidad_a_mejor": 0.9865,
+    "significativa": true,
+    "estudios": 54
+  }
+]

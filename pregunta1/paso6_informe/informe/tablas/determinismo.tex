@@ -1,0 +1,13 @@
+\begin{table}[ht]
+\centering
+\caption{Dos entrenamientos de la misma configuración, con la misma semilla y los mismos datos, en el mismo proceso. Sembrar los generadores no alcanza en GPU: cuDNN elige kernels en tiempo de ejecución y varios acumulan en orden no determinista. La diferencia que eso introduce es del mismo orden que los efectos que el estudio de ablación pretende medir, de modo que sin fijar los kernels ninguna de esas comparaciones significa nada.}
+\label{tab:determinismo}
+\begin{tabular}{lcccc}
+\toprule
+Configuración del entorno & Primera diferencia & Mejor AUC (1) & Mejor AUC (2) & Mayor $\Delta$ \\
+\midrule
+Sembrando solo los generadores & época 1 & 0.6501 & 0.6801 & 4.1e-02 \\
+Con kernels deterministas & idénticas & 0.6633 & 0.6633 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

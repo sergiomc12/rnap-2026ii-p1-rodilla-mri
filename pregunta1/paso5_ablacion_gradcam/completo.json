@@ -1,0 +1,30 @@
+{
+  "completo_resnet50_g08_c24": {
+    "grupos": 8,
+    "cortes": 24,
+    "modelo": "resnet50",
+    "pooling": "atencion",
+    "minutos": 8.5
+  },
+  "completo_inception_g08_c24": {
+    "grupos": 8,
+    "cortes": 24,
+    "modelo": "inception",
+    "pooling": "atencion",
+    "minutos": 14.2
+  },
+  "completo_resnet50_g08_c24_promedio": {
+    "grupos": 8,
+    "cortes": 24,
+    "modelo": "resnet50",
+    "pooling": "promedio",
+    "minutos": 13.1
+  },
+  "completo_inception_g08_c24_promedio": {
+    "grupos": 8,
+    "cortes": 24,
+    "modelo": "inception",
+    "pooling": "promedio",
+    "minutos": 27.2
+  }
+}

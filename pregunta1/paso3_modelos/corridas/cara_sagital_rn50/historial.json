@@ -1,0 +1,52 @@
+{
+  "modelo": "resnet50",
+  "perdida": "bce",
+  "pooling": "atencion_por_etiqueta",
+  "preentrenado": true,
+  "aumentar": true,
+  "semilla": 42,
+  "seleccion": "D:\\Backend\\redesneuronales\\pregunta1\\paso2_preprocesamiento\\estudios_4407.csv",
+  "cache": "D:\\Backend\\redesneuronales\\pregunta1\\paso2_preprocesamiento\\caches_ablacion\\completo_g64_c192",
+  "etiquetas_activas": [
+    "Effusion",
+    "MCL",
+    "Contusion",
+    "Lateral OA",
+    "Baker's",
+    "Fracture",
+    "Medial Meniscus",
+    "Medial OA"
+  ],
+  "determinista": true,
+  "learning_rate": 0.0001,
+  "lote": 2,
+  "parametros_millones": 26.94,
+  "minutos": 8.3,
+  "mejor_epoca": 59,
+  "auc_validacion": 0.805532,
+  "epocas": [
+    {
+      "epoca": 60,
+      "perdida_entrenamiento": 0.016411742065695335,
+      "perdida_validacion": 0.9520124452284664,
+      "auc_macro": 0.6806774426264441,
+      "auc_por_etiqueta": {
+        "ACL": 0.33361592684320823,
+        "MCL": 0.6890856618129345,
+        "Medial Meniscus": 0.7796742916613568,
+        "Lateral Meniscus": 0.6093624549227733,
+        "Medial OA": 0.7271700377704825,
+        "Lateral OA": 0.742871450453635,
+        "PF OA": 0.5267012355162922,
+        "Effusion": 0.769895942332287,
+        "Synovitis": 0.6281331503088539,
+        "Baker's": 0.790395260335582,
+        "Contusion": 0.7230613094618508,
+        "Fracture": 0.8481625900980739
+      },
+      "segundos": 496.6
+    }
+  ],
+  "pesos_invalidos": true,
+  "nota_pesos": "pesos.pt NO corresponde a mejor_epoca: lo sobrescribio el guardado final con los pesos de la ultima epoca. El AUC reportado es correcto, los PESOS no. Ver tests/test_no_pisar_checkpoint.py"
+}

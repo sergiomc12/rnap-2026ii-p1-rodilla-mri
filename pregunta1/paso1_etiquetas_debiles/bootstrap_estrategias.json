@@ -1,0 +1,30 @@
+{
+  "n_dorados": 58,
+  "remuestreos": 2000,
+  "semilla": 42,
+  "base": {
+    "estrategia": "sin traducir",
+    "f1": 0.512,
+    "ic95": [
+      0.416,
+      0.578
+    ]
+  },
+  "mejor": {
+    "estrategia": "traducir salvo inglés y español",
+    "f1": 0.589,
+    "ic95": [
+      0.518,
+      0.636
+    ]
+  },
+  "delta": {
+    "valor": 0.076,
+    "ic95": [
+      0.039,
+      0.127
+    ],
+    "p_mejor_gana": 100.0,
+    "significativa": true
+  }
+}

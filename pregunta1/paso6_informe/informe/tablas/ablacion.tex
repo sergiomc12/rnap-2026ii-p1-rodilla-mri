@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\caption{Bootstrap pareado sobre los estudios dorados. 2 de 7 diferencias alcanzan significancia, entendida como un intervalo del 95\% que no cruza cero. El bootstrap es \emph{pareado} —remuestrea los mismos estudios para las dos configuraciones— porque comparar dos intervalos independientes tiene mucha menos potencia.}
+\label{tab:ablacion}
+\begin{tabular}{lcccc}
+\toprule
+Comparación & $\Delta$ AUC & IC95\% & $P(A>B)$ & Signif. \\
+\midrule
+Inception vs.\ ResNet-50 & $-0.018$ & $[-0.098, +0.058]$ & 34\% & no \\
+Promedio vs.\ atención & $+0.062$ & $[-0.001, +0.128]$ & 97\% & no \\
+ImageNet vs.\ desde cero & $+0.084$ & $[+0.002, +0.165]$ & 98\% & \textbf{sí} \\
+Focal vs.\ BCE (con atención) & $-0.025$ & $[-0.081, +0.034]$ & 20\% & no \\
+Focal vs.\ BCE (con promedio) & $-0.016$ & $[-0.051, +0.016]$ & 16\% & no \\
+BCE ponderada vs.\ BCE & $-0.009$ & $[-0.047, +0.027]$ & 31\% & no \\
+Plano sagital vs.\ coronal & $+0.056$ & $[+0.005, +0.108]$ & 99\% & \textbf{sí} \\
+\bottomrule
+\end{tabular}
+\end{table}

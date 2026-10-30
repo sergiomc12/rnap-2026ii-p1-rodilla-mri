@@ -1,0 +1,17 @@
+{
+  "identicas": true,
+  "primera_epoca_que_difiere": null,
+  "mayor_diferencia": {
+    "campo": null,
+    "diferencia": 0.0,
+    "epoca": null
+  },
+  "auc_final_a": 0.6633079606483363,
+  "auc_final_b": 0.6633079606483363,
+  "mejor_auc_a": 0.6633079606483363,
+  "mejor_auc_b": 0.6633079606483363,
+  "determinista": true,
+  "epocas": 3,
+  "pooling": "atencion",
+  "semilla": 42
+}

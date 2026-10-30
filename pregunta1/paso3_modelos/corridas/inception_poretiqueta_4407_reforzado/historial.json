@@ -1,0 +1,12 @@
+{
+  "modelo": "inception",
+  "pooling": "atencion_por_etiqueta",
+  "perdida": "bce",
+  "seleccion": "pregunta1\\paso2_preprocesamiento\\estudios_4407_reforzado.csv",
+  "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\completo_g64_c192",
+  "etiquetas_activas": [],
+  "parametros_millones": 1.3,
+  "mejor_epoca": 48,
+  "auc_validacion": 0.7476014845437198,
+  "nota": "entrenamiento 1-60 detenido en epoca 55 por meseta; mejor epoca=48"
+}

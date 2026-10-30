@@ -1,0 +1,10 @@
+{
+  "epoca": 14,
+  "auc_validacion": 0.7407736944501505,
+  "auc_macro_doce": 0.5559949591070095,
+  "etiquetas_activas": [
+    "Synovitis",
+    "ACL"
+  ],
+  "perdida_validacion": 0.3578275010006886
+}

@@ -1,0 +1,174 @@
+% Referencias del informe — Pregunta 1
+%
+% Las cinco primeras son las que sostienen la solución: cada una se tradujo
+% en código concreto de este repositorio, no son relleno bibliográfico.
+% Las siguientes son de contexto y de material del curso.
+%
+% El examen exige un mínimo de cinco referencias.
+
+% ---------------------------------------------------------------------------
+% LAS CINCO QUE SOSTIENEN LA SOLUCIÓN
+% ---------------------------------------------------------------------------
+
+% [1] Arquitectura A — la CNN desde cero.
+% Los bloques Inception con reducciones 1x1 de pregunta1/paso3_modelos/inception.py
+% salen de aquí. La razón de elegirla: ramas paralelas de 1x1, 3x3 y 5x5 a la
+% misma profundidad, que capturan hallazgos de escalas muy distintas (una rotura
+% meniscal son milímetros, un derrame ocupa la cápsula) sin añadir profundidad,
+% que es lo que 576 estudios no toleran. PDF local: doc/GooGleNet.pdf
+@inproceedings{szegedy2015going,
+  title     = {Going Deeper with Convolutions},
+  author    = {Szegedy, Christian and Liu, Wei and Jia, Yangqing and
+               Sermanet, Pierre and Reed, Scott and Anguelov, Dragomir and
+               Erhan, Dumitru and Vanhoucke, Vincent and Rabinovich, Andrew},
+  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {1--9},
+  year      = {2015},
+}
+
+% [2] Arquitectura B — el backbone preentrenado en ImageNet.
+% ResNet-50 con pesos IMAGENET1K_V2, en pregunta1/paso3_modelos/modelos.py.
+% El examen la nombra explícitamente. El BottleneckBlock es lo que distingue a
+% ResNet-50 de ResNet-18. PDF local: doc/ResNet.pdf
+@inproceedings{he2016deep,
+  title     = {Deep Residual Learning for Image Recognition},
+  author    = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {770--778},
+  year      = {2016},
+}
+
+% [3] El pooling por atención — el componente que el examen exige implementar.
+% pregunta1/paso3_modelos/pooling.py sigue esta formulación, incluida la rama
+% con compuerta (sigmoide). Resuelve el problema central de la tarea: pasar de
+% ocho grupos de cortes a una predicción por estudio sin diluir un hallazgo que
+% ocupa dos o tres cortes de treinta.
+% Nota: la ablación de este trabajo encontró que la media SUPERA a la atención
+% de forma significativa (+0.103, IC95% [+0.048, +0.159]) con 416 estudios de
+% entrenamiento. Se cita porque es la base de la implementación, no porque el
+% resultado lo confirme.
+@inproceedings{ilse2018attention,
+  title     = {Attention-based Deep Multiple Instance Learning},
+  author    = {Ilse, Maximilian and Tomczak, Jakub M. and Welling, Max},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  pages     = {2127--2136},
+  year      = {2018},
+}
+
+% [4] Grad-CAM — el entregable #5 completo.
+% pregunta1/paso5_ablacion_gradcam/gradcam.py está escrito desde cero siguiendo
+% este método: gradiente del logit respecto del último mapa convolucional,
+% promediado por canal, combinado y rectificado. Ninguno de los notebooks del
+% curso lo implementa (verificado: cero register_forward_hook en los cuatro).
+@inproceedings{selvaraju2017grad,
+  title     = {Grad-CAM: Visual Explanations from Deep Networks via
+               Gradient-based Localization},
+  author    = {Selvaraju, Ramprasaath R. and Cogswell, Michael and Das, Abhishek
+               and Vedantam, Ramakrishna and Parikh, Devi and Batra, Dhruv},
+  booktitle = {IEEE International Conference on Computer Vision (ICCV)},
+  pages     = {618--626},
+  year      = {2017},
+}
+
+% [5] NegEx — la detección de negación del extractor de etiquetas débiles.
+% pregunta1/paso1_etiquetas_debiles/negacion.py aplica este esquema: ventana de
+% seis palabras alrededor del término, con disparadores previos y posteriores.
+% Es lo que convirtió un buscador de palabras clave inservible (44.8% de acuerdo
+% en Medial Meniscus, 18 falsos positivos en ACL sobre 58 estudios) en un
+% extractor de 74.0%: los informes radiológicos enumeran lo que NO encontraron.
+@article{chapman2001simple,
+  title   = {A Simple Algorithm for Identifying Negated Findings and Diseases
+             in Discharge Summaries},
+  author  = {Chapman, Wendy W. and Bridewell, Will and Hanbury, Paul and
+             Cooper, Gregory F. and Buchanan, Bruce G.},
+  journal = {Journal of Biomedical Informatics},
+  volume  = {34},
+  number  = {5},
+  pages   = {301--310},
+  year    = {2001},
+}
+
+% ---------------------------------------------------------------------------
+% TAMBIÉN USADAS EN LA IMPLEMENTACIÓN
+% ---------------------------------------------------------------------------
+
+% [6] NLLB — la traducción de los 2,671 reportes no-ingleses.
+% pregunta1/paso1_etiquetas_debiles/traduccion.py usa nllb-200-distilled-600M.
+% Resolvió el F1 de 0.00 en croata, griego y búlgaro y bajó los estudios sin
+% etiqueta del 46.8% al 20.1%. También degrada terminología médica: el español
+% nativo cayó de 0.48 a 0.29 al traducirlo, lo que motivó la estrategia híbrida.
+@article{nllb2022,
+  title   = {No Language Left Behind: Scaling Human-Centered Machine Translation},
+  author  = {{NLLB Team} and Costa-juss{\`a}, Marta R. and Cross, James and
+             {\c{C}}elebi, Onur and Elbayad, Maha and Heafield, Kenneth and
+             Heffernan, Kevin and others},
+  journal = {arXiv preprint arXiv:2207.04672},
+  year    = {2022},
+}
+
+% [7] Focal loss — uno de los factores de la ablación del entregable #4.
+% pregunta1/paso3_modelos/perdidas.py. Verificado: con gamma=2 y alpha=0.25
+% reduce 880x la contribución de un ejemplo fácil y solo 2.2x la de uno difícil.
+% Resultado medido: empeora de forma significativa sobre la mejor configuración
+% (-0.035, IC95% [-0.067, -0.003]).
+@inproceedings{lin2017focal,
+  title     = {Focal Loss for Dense Object Detection},
+  author    = {Lin, Tsung-Yi and Goyal, Priya and Girshick, Ross and
+               He, Kaiming and Doll{\'a}r, Piotr},
+  booktitle = {IEEE International Conference on Computer Vision (ICCV)},
+  pages     = {2980--2988},
+  year      = {2017},
+}
+
+% [8] ImageNet — los pesos preentrenados que el examen autoriza para el backbone.
+@inproceedings{deng2009imagenet,
+  title     = {ImageNet: A Large-Scale Hierarchical Image Database},
+  author    = {Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and
+               Li, Kai and Fei-Fei, Li},
+  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {248--255},
+  year      = {2009},
+}
+
+% ---------------------------------------------------------------------------
+% MATERIAL DEL CURSO (doc/) — contexto de trabajos relacionados
+% ---------------------------------------------------------------------------
+
+% doc/lecun-98.pdf
+@article{lecun1998gradient,
+  title   = {Gradient-Based Learning Applied to Document Recognition},
+  author  = {LeCun, Yann and Bottou, L{\'e}on and Bengio, Yoshua and
+             Haffner, Patrick},
+  journal = {Proceedings of the IEEE},
+  volume  = {86},
+  number  = {11},
+  pages   = {2278--2324},
+  year    = {1998},
+}
+
+% doc/AlexNetPaper.pdf
+@inproceedings{krizhevsky2012imagenet,
+  title     = {ImageNet Classification with Deep Convolutional Neural Networks},
+  author    = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E.},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  pages     = {1097--1105},
+  year      = {2012},
+}
+
+% doc/1409.1556v6.pdf
+@inproceedings{simonyan2015very,
+  title     = {Very Deep Convolutional Networks for Large-Scale Image Recognition},
+  author    = {Simonyan, Karen and Zisserman, Andrew},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2015},
+}
+
+% El conjunto de datos del que sale todo.
+@misc{rsna2026knee,
+  title        = {RSNA Knee Abnormality Detection},
+  author       = {{Radiological Society of North America}},
+  howpublished = {Kaggle},
+  year         = {2026},
+  note         = {819,640 archivos DICOM, 569.76 GB, 16 centros en cinco continentes.
+                  \url{https://www.kaggle.com/competitions/rsna-knee-abnormality-detection}},
+}

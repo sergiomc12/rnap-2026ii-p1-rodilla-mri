@@ -1,0 +1,39 @@
+{
+  "n_dorados": 58,
+  "estrategias": [
+    {
+      "estrategia": "sin traducir",
+      "idiomas_sin_traducir": null,
+      "acuerdo_macro": 72.1,
+      "f1_macro": 0.512,
+      "ruido_macro": 27.9
+    },
+    {
+      "estrategia": "traducir todo",
+      "idiomas_sin_traducir": [],
+      "acuerdo_macro": 74.0,
+      "f1_macro": 0.556,
+      "ruido_macro": 26.0
+    },
+    {
+      "estrategia": "traducir salvo inglés",
+      "idiomas_sin_traducir": [
+        "en"
+      ],
+      "acuerdo_macro": 74.0,
+      "f1_macro": 0.556,
+      "ruido_macro": 26.0
+    },
+    {
+      "estrategia": "traducir salvo inglés y español",
+      "idiomas_sin_traducir": [
+        "en",
+        "es"
+      ],
+      "acuerdo_macro": 74.3,
+      "f1_macro": 0.589,
+      "ruido_macro": 25.7
+    }
+  ],
+  "mejor": "traducir salvo inglés y español"
+}

@@ -1,0 +1,91 @@
+
+--- reintento: epocas 1-60, desde AUC 0.0000 ---
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=resnet50 perdida=bce pooling=atencion_por_etiqueta params=26.9M
+cache=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\caches_ablacion\g64_axial
+seleccion=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=60 lote=2 lr=0.0001 paciencia=60 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Synovitis', 'ACL']
+
+dispositivo: cuda
+
+  epoca  1/60 | train 0.3525 | val 0.4079 | AUC(2) 0.7434 | AUC(12) 0.5532 | 516s *
+  epoca  2/60 | train 0.3165 | val 0.3303 | AUC(2) 0.8010 | AUC(12) 0.5981 | 516s *
+  epoca  3/60 | train 0.2932 | val 0.3048 | AUC(2) 0.8264 | AUC(12) 0.5723 | 724s *
+
+--- reintento: epocas 4-60, desde AUC 0.8264 ---
+
+--- reintento: epocas 4-60, desde AUC 0.8264 ---
+
+--- reintento: epocas 4-60, desde AUC 0.8264 ---
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=resnet50 perdida=bce pooling=atencion_por_etiqueta params=26.9M
+cache=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\caches_ablacion\g64_axial
+seleccion=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=57 lote=2 lr=0.0001 paciencia=60 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Synovitis', 'ACL']
+
+dispositivo: cuda
+reanudado desde D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_axial_rn50\ultimo.pt
+  con estado del optimizador (venia de la epoca 3)
+
+  epoca  4/60 | train 0.2500 | val 0.3429 | AUC(2) 0.8301 | AUC(12) 0.5788 | 952s *
+  epoca  5/60 | train 0.2062 | val 0.3962 | AUC(2) 0.8322 | AUC(12) 0.5763 | 959s *
+  epoca  6/60 | train 0.1649 | val 0.3335 | AUC(2) 0.8351 | AUC(12) 0.5799 | 942s *
+  epoca  7/60 | train 0.1638 | val 0.3570 | AUC(2) 0.8121 | AUC(12) 0.5727 | 924s
+  epoca  8/60 | train 0.1367 | val 0.4485 | AUC(2) 0.8223 | AUC(12) 0.5773 | 938s
+  epoca  9/60 | train 0.1074 | val 0.4618 | AUC(2) 0.7963 | AUC(12) 0.5769 | 937s
+  epoca 10/60 | train 0.0871 | val 0.4719 | AUC(2) 0.8110 | AUC(12) 0.5746 | 955s
+  epoca 11/60 | train 0.0694 | val 0.5186 | AUC(2) 0.8137 | AUC(12) 0.5843 | 962s
+  epoca 12/60 | train 0.0619 | val 0.4672 | AUC(2) 0.8243 | AUC(12) 0.5801 | 940s
+  epoca 13/60 | train 0.0539 | val 0.6464 | AUC(2) 0.8164 | AUC(12) 0.5971 | 964s
+  epoca 14/60 | train 0.0506 | val 0.6010 | AUC(2) 0.8211 | AUC(12) 0.5997 | 915s
+  epoca 15/60 | train 0.0469 | val 0.5693 | AUC(2) 0.8179 | AUC(12) 0.5820 | 539s
+  epoca 16/60 | train 0.0456 | val 0.5877 | AUC(2) 0.8180 | AUC(12) 0.5747 | 549s
+  epoca 17/60 | train 0.0367 | val 0.6779 | AUC(2) 0.8039 | AUC(12) 0.5964 | 550s
+  epoca 18/60 | train 0.0383 | val 0.6493 | AUC(2) 0.8001 | AUC(12) 0.5709 | 553s
+  epoca 19/60 | train 0.0326 | val 0.7408 | AUC(2) 0.8186 | AUC(12) 0.5835 | 551s
+  epoca 20/60 | train 0.0320 | val 0.6317 | AUC(2) 0.8245 | AUC(12) 0.5610 | 538s
+  epoca 21/60 | train 0.0289 | val 0.6953 | AUC(2) 0.8136 | AUC(12) 0.5829 | 526s
+  epoca 22/60 | train 0.0307 | val 0.6893 | AUC(2) 0.8032 | AUC(12) 0.5628 | 539s
+  epoca 23/60 | train 0.0309 | val 0.6703 | AUC(2) 0.8182 | AUC(12) 0.5751 | 538s
+  epoca 24/60 | train 0.0299 | val 0.7490 | AUC(2) 0.7760 | AUC(12) 0.5655 | 538s
+  epoca 25/60 | train 0.0244 | val 0.7727 | AUC(2) 0.7958 | AUC(12) 0.5639 | 524s
+  epoca 26/60 | train 0.0254 | val 0.7761 | AUC(2) 0.7896 | AUC(12) 0.5791 | 533s
+  epoca 27/60 | train 0.0224 | val 0.7705 | AUC(2) 0.7985 | AUC(12) 0.5750 | 524s
+  epoca 28/60 | train 0.0241 | val 0.6174 | AUC(2) 0.8169 | AUC(12) 0.5818 | 511s
+  epoca 29/60 | train 0.0194 | val 0.8288 | AUC(2) 0.7722 | AUC(12) 0.5877 | 516s
+  epoca 30/60 | train 0.0262 | val 0.6694 | AUC(2) 0.8128 | AUC(12) 0.5923 | 511s
+  epoca 31/60 | train 0.0247 | val 0.6561 | AUC(2) 0.8009 | AUC(12) 0.5859 | 502s
+  epoca 32/60 | train 0.0255 | val 0.7311 | AUC(2) 0.8119 | AUC(12) 0.5773 | 512s
+  epoca 33/60 | train 0.0202 | val 0.8992 | AUC(2) 0.7879 | AUC(12) 0.5809 | 510s
+  epoca 34/60 | train 0.0178 | val 0.9204 | AUC(2) 0.7994 | AUC(12) 0.5876 | 526s
+  epoca 35/60 | train 0.0224 | val 0.8205 | AUC(2) 0.8018 | AUC(12) 0.5740 | 513s
+  epoca 36/60 | train 0.0202 | val 0.7310 | AUC(2) 0.8035 | AUC(12) 0.5857 | 546s
+  epoca 37/60 | train 0.0180 | val 0.8353 | AUC(2) 0.8023 | AUC(12) 0.5851 | 546s
+  epoca 38/60 | train 0.0205 | val 0.7853 | AUC(2) 0.8009 | AUC(12) 0.5780 | 549s
+  epoca 39/60 | train 0.0222 | val 0.8161 | AUC(2) 0.7879 | AUC(12) 0.5635 | 549s
+  epoca 40/60 | train 0.0230 | val 0.6453 | AUC(2) 0.8062 | AUC(12) 0.5697 | 553s
+  epoca 41/60 | train 0.0132 | val 0.8131 | AUC(2) 0.8019 | AUC(12) 0.5605 | 550s
+  epoca 42/60 | train 0.0128 | val 0.9438 | AUC(2) 0.7931 | AUC(12) 0.5460 | 545s
+  epoca 43/60 | train 0.0167 | val 0.8685 | AUC(2) 0.8050 | AUC(12) 0.5655 | 546s
+  epoca 44/60 | train 0.0186 | val 0.7464 | AUC(2) 0.8025 | AUC(12) 0.5631 | 546s
+  epoca 45/60 | train 0.0187 | val 0.7990 | AUC(2) 0.7901 | AUC(12) 0.5787 | 547s
+  epoca 46/60 | train 0.0192 | val 0.7568 | AUC(2) 0.8145 | AUC(12) 0.5769 | 546s
+  epoca 47/60 | train 0.0121 | val 0.7634 | AUC(2) 0.8174 | AUC(12) 0.5632 | 507s
+  epoca 48/60 | train 0.0122 | val 0.9090 | AUC(2) 0.8079 | AUC(12) 0.5581 | 503s
+  epoca 49/60 | train 0.0210 | val 0.7912 | AUC(2) 0.8195 | AUC(12) 0.5632 | 502s
+  epoca 50/60 | train 0.0142 | val 0.6999 | AUC(2) 0.8085 | AUC(12) 0.5705 | 515s
+  epoca 51/60 | train 0.0152 | val 0.8751 | AUC(2) 0.8007 | AUC(12) 0.5698 | 511s
+  epoca 52/60 | train 0.0149 | val 0.8342 | AUC(2) 0.8050 | AUC(12) 0.5749 | 510s
+  epoca 53/60 | train 0.0192 | val 0.8230 | AUC(2) 0.8134 | AUC(12) 0.5679 | 513s
+  epoca 54/60 | train 0.0118 | val 0.7170 | AUC(2) 0.7988 | AUC(12) 0.5786 | 505s
+  epoca 55/60 | train 0.0193 | val 0.8761 | AUC(2) 0.7949 | AUC(12) 0.5635 | 506s
+  epoca 56/60 | train 0.0101 | val 0.9035 | AUC(2) 0.8038 | AUC(12) 0.5649 | 508s
+  epoca 57/60 | train 0.0139 | val 0.8954 | AUC(2) 0.7780 | AUC(12) 0.5509 | 514s
+  epoca 58/60 | train 0.0120 | val 0.7551 | AUC(2) 0.8172 | AUC(12) 0.5610 | 512s
+  epoca 59/60 | train 0.0086 | val 0.9554 | AUC(2) 0.8097 | AUC(12) 0.5584 | 510s
+  epoca 60/60 | train 0.0187 | val 0.8827 | AUC(2) 0.7788 | AUC(12) 0.5730 | 511s
+
+mejor epoca 6 | AUC validacion 0.8351 | 577.6 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_axial_rn50

@@ -1,0 +1,161 @@
+{
+  "resnet50_bce_promedio": {
+    "modelo": "resnet50",
+    "perdida": "bce",
+    "pooling": "promedio",
+    "preentrenado": true,
+    "pliegues": 5,
+    "auc_media": 0.735417911064806,
+    "auc_desviacion": 0.012497509766026883,
+    "auc_min": 0.7269149700231233,
+    "auc_max": 0.7565028585404235,
+    "por_pliegue": [
+      {
+        "auc": 0.7270513795508527,
+        "mejor_epoca": 11,
+        "epocas_corridas": 16,
+        "minutos": 1.8,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.7565028585404235,
+        "mejor_epoca": 19,
+        "epocas_corridas": 24,
+        "minutos": 2.7,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.729502810933267,
+        "mejor_epoca": 9,
+        "epocas_corridas": 14,
+        "minutos": 1.6,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.7371175362763633,
+        "mejor_epoca": 12,
+        "epocas_corridas": 17,
+        "minutos": 1.9,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.7269149700231233,
+        "mejor_epoca": 12,
+        "epocas_corridas": 17,
+        "minutos": 1.9,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      }
+    ]
+  },
+  "inception_bce_atencion": {
+    "modelo": "inception",
+    "perdida": "bce",
+    "pooling": "atencion",
+    "preentrenado": true,
+    "pliegues": 5,
+    "auc_media": 0.6716733804757707,
+    "auc_desviacion": 0.014975780492277092,
+    "auc_min": 0.6604172774365277,
+    "auc_max": 0.6969246273998256,
+    "por_pliegue": [
+      {
+        "auc": 0.6666424239328385,
+        "mejor_epoca": 15,
+        "epocas_corridas": 20,
+        "minutos": 1.9,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.6604172774365277,
+        "mejor_epoca": 17,
+        "epocas_corridas": 22,
+        "minutos": 2.1,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.6969246273998256,
+        "mejor_epoca": 24,
+        "epocas_corridas": 25,
+        "minutos": 2.4,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.6613912080349008,
+        "mejor_epoca": 18,
+        "epocas_corridas": 23,
+        "minutos": 2.2,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.6729913655747614,
+        "mejor_epoca": 13,
+        "epocas_corridas": 18,
+        "minutos": 1.8,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      }
+    ]
+  },
+  "resnet50_bce_atencion": {
+    "modelo": "resnet50",
+    "perdida": "bce",
+    "pooling": "atencion",
+    "preentrenado": true,
+    "pliegues": 5,
+    "auc_media": 0.6975344344157035,
+    "auc_desviacion": 0.014303243103491832,
+    "auc_min": 0.681950442640341,
+    "auc_max": 0.7210511261507757,
+    "por_pliegue": [
+      {
+        "auc": 0.694418332100626,
+        "mejor_epoca": 3,
+        "epocas_corridas": 8,
+        "minutos": 0.9,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.6943759478768131,
+        "mejor_epoca": 10,
+        "epocas_corridas": 15,
+        "minutos": 1.7,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.7210511261507757,
+        "mejor_epoca": 6,
+        "epocas_corridas": 11,
+        "minutos": 1.2,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.681950442640341,
+        "mejor_epoca": 13,
+        "epocas_corridas": 18,
+        "minutos": 2.1,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      },
+      {
+        "auc": 0.695876323309962,
+        "mejor_epoca": 17,
+        "epocas_corridas": 22,
+        "minutos": 2.5,
+        "n_entrenamiento": 416,
+        "n_validacion": 104
+      }
+    ]
+  }
+}

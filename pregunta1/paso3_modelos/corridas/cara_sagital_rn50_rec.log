@@ -1,0 +1,22 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=resnet50 perdida=bce pooling=atencion_por_etiqueta params=26.9M
+cache=pregunta1\paso2_preprocesamiento\caches_ablacion\completo_g64_c192
+seleccion=pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=10 lote=2 lr=0.0001 paciencia=10 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Effusion', 'MCL', 'Contusion', 'Lateral OA', "Baker's", 'Fracture', 'Medial Meniscus', 'Medial OA']
+
+dispositivo: cuda
+
+  epoca  1/10 | train 0.4036 | val 0.3831 | AUC(8) 0.7176 | AUC(12) 0.6357 | 526s *
+  epoca  2/10 | train 0.3693 | val 0.3770 | AUC(8) 0.7491 | AUC(12) 0.6603 | 509s *
+  epoca  3/10 | train 0.3473 | val 0.3540 | AUC(8) 0.7836 | AUC(12) 0.7054 | 510s *
+  epoca  4/10 | train 0.3250 | val 0.3532 | AUC(8) 0.7892 | AUC(12) 0.7152 | 515s *
+  epoca  5/10 | train 0.3004 | val 0.3849 | AUC(8) 0.7884 | AUC(12) 0.7087 | 510s
+  epoca  6/10 | train 0.2750 | val 0.3877 | AUC(8) 0.7846 | AUC(12) 0.7133 | 510s
+  epoca  7/10 | train 0.2421 | val 0.3965 | AUC(8) 0.7811 | AUC(12) 0.7050 | 508s
+  epoca  8/10 | train 0.2136 | val 0.4152 | AUC(8) 0.8055 | AUC(12) 0.7255 | 512s *
+  epoca  9/10 | train 0.1854 | val 0.4289 | AUC(8) 0.7883 | AUC(12) 0.7154 | 517s
+  epoca 10/10 | train 0.1546 | val 0.4930 | AUC(8) 0.7760 | AUC(12) 0.7059 | 506s
+
+mejor epoca 8 | AUC validacion 0.8055 | 85.4 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_sagital_rn50_rec

@@ -1,0 +1,14 @@
+\begin{table}[ht]
+\centering
+\caption{Validación cruzada sobre las etiquetas débiles. La desviación entre pliegues es la escala con la que hay que leer cualquier diferencia entre configuraciones medida sobre una sola partición.}
+\label{tab:cruzada}
+\begin{tabular}{lrccc}
+\toprule
+Configuración & Pliegues & AUC medio & Desv. & Rango \\
+\midrule
+ResNet-50 + promedio & 5 & 0.7354 & 0.0125 & $[0.7269, 0.7565]$ \\
+ResNet-50 + atención & 5 & 0.6975 & 0.0143 & $[0.6820, 0.7211]$ \\
+Inception + atención & 5 & 0.6717 & 0.0150 & $[0.6604, 0.6969]$ \\
+\bottomrule
+\end{tabular}
+\end{table}

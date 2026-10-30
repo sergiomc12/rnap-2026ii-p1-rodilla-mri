@@ -1,0 +1,10 @@
+{
+  "g08_c24": {
+    "grupos": 8,
+    "cortes": 24,
+    "nota": "actual: cubre la banda entera en el 91% de las series",
+    "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\completo_g08_c24",
+    "minutos_cache": 0.0,
+    "cache_gb": 0.0
+  }
+}

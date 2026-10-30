@@ -1,0 +1,50 @@
+{
+  "g08_c24": {
+    "grupos": 8,
+    "cortes": 24,
+    "nota": "actual: cubre la banda entera en el 91% de las series",
+    "cache": "pregunta1\\paso2_preprocesamiento\\cache",
+    "minutos_cache": 0.0,
+    "cache_gb": 2.77
+  },
+  "g13_c39": {
+    "grupos": 13,
+    "cortes": 39,
+    "nota": "~40 cortes: el umbral donde g=8 empieza a quedarse corto",
+    "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g13_c39",
+    "minutos_cache": 0.0,
+    "cache_gb": 4.51
+  },
+  "g17_c51": {
+    "grupos": 17,
+    "cortes": 51,
+    "nota": "~50 cortes",
+    "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g17_c51",
+    "minutos_cache": 1.8,
+    "cache_gb": 5.9
+  },
+  "g20_c60": {
+    "grupos": 20,
+    "cortes": 60,
+    "nota": "~60 cortes",
+    "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g20_c60",
+    "minutos_cache": 2.0,
+    "cache_gb": 6.94
+  },
+  "g24_c72": {
+    "grupos": 24,
+    "cortes": 72,
+    "nota": "72 cortes",
+    "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g24_c72",
+    "minutos_cache": 2.4,
+    "cache_gb": 8.32
+  },
+  "g64_c192": {
+    "grupos": 64,
+    "cortes": 192,
+    "nota": "cubre la banda de la serie más larga del conjunto (320 cortes)",
+    "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g64_c192",
+    "minutos_cache": 5.0,
+    "cache_gb": 22.2
+  }
+}

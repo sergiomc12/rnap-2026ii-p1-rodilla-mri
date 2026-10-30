@@ -1,0 +1,15 @@
+    precargando 500/3480 (4.5 GB)
+    precargando 1000/3480 (9.0 GB)
+    precargando 1500/3480 (13.5 GB)
+    precargando 2000/3480 (17.9 GB)
+    precargando 2500/3480 (22.4 GB)
+    precargando 3000/3480 (26.9 GB)
+    3480 tensores en RAM, 31.2 GB (uint8)
+    precargando 500/869 (4.5 GB)
+    869 tensores en RAM, 7.8 GB (uint8)
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=resnet50 perdida=bce pooling=atencion_por_etiqueta params=26.9M
+
+dispositivo: cuda
+
+  epoca  1/60 | train 0.4220 | val 0.3996 | AUC 0.7293 | 644s *

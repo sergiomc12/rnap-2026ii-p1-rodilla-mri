@@ -1,0 +1,42 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+
+dispositivo: cuda
+
+  epoca  1/60 | train 0.4437 | val 0.4720 | AUC 0.6070 | 435s *
+  epoca  2/60 | train 0.4283 | val 0.4283 | AUC 0.6519 | 433s *
+  epoca  3/60 | train 0.4227 | val 0.4233 | AUC 0.6614 | 432s *
+  epoca  4/60 | train 0.4186 | val 0.4234 | AUC 0.6555 | 439s
+  epoca  5/60 | train 0.4171 | val 0.4226 | AUC 0.6654 | 445s *
+  epoca  6/60 | train 0.4144 | val 0.4243 | AUC 0.6708 | 463s *
+  epoca  7/60 | train 0.4120 | val 0.4195 | AUC 0.6669 | 464s
+  epoca  8/60 | train 0.4102 | val 0.4235 | AUC 0.6732 | 466s *
+  epoca  9/60 | train 0.4081 | val 0.4187 | AUC 0.6819 | 469s *
+  epoca 10/60 | train 0.4058 | val 0.4217 | AUC 0.6794 | 474s
+  epoca 11/60 | train 0.4049 | val 0.4215 | AUC 0.6818 | 467s
+  epoca 12/60 | train 0.4040 | val 0.4158 | AUC 0.6812 | 453s
+  epoca 13/60 | train 0.4019 | val 0.4168 | AUC 0.6881 | 437s *
+  epoca 14/60 | train 0.3994 | val 0.4180 | AUC 0.6887 | 437s *
+  epoca 15/60 | train 0.3968 | val 0.4225 | AUC 0.6850 | 440s
+  epoca 16/60 | train 0.3947 | val 0.4158 | AUC 0.6962 | 432s *
+  epoca 17/60 | train 0.3938 | val 0.4184 | AUC 0.6922 | 432s
+  epoca 18/60 | train 0.3920 | val 0.4113 | AUC 0.7010 | 449s *
+  epoca 19/60 | train 0.3912 | val 0.4157 | AUC 0.6981 | 435s
+  epoca 20/60 | train 0.3894 | val 0.4060 | AUC 0.7125 | 435s *
+  epoca 21/60 | train 0.3868 | val 0.4120 | AUC 0.7030 | 429s
+  epoca 22/60 | train 0.3857 | val 0.4148 | AUC 0.7028 | 439s
+  epoca 23/60 | train 0.3847 | val 0.4127 | AUC 0.7087 | 447s
+  epoca 24/60 | train 0.3819 | val 0.4056 | AUC 0.7128 | 456s *
+  epoca 25/60 | train 0.3815 | val 0.4093 | AUC 0.7007 | 437s
+  epoca 26/60 | train 0.3797 | val 0.4182 | AUC 0.6997 | 437s
+  epoca 27/60 | train 0.3789 | val 0.4161 | AUC 0.7123 | 440s
+  epoca 28/60 | train 0.3751 | val 0.4219 | AUC 0.7039 | 444s
+  epoca 29/60 | train 0.3739 | val 0.4185 | AUC 0.7173 | 430s *
+  epoca 30/60 | train 0.3714 | val 0.4205 | AUC 0.7142 | 427s
+  epoca 31/60 | train 0.3722 | val 0.4187 | AUC 0.7097 | 430s
+  epoca 32/60 | train 0.3698 | val 0.4056 | AUC 0.7164 | 442s
+  epoca 33/60 | train 0.3683 | val 0.4081 | AUC 0.7131 | 434s
+  epoca 34/60 | train 0.3658 | val 0.4150 | AUC 0.7180 | 444s *
+  epoca 35/60 | train 0.3622 | val 0.4126 | AUC 0.7192 | 442s *
+  epoca 36/60 | train 0.3615 | val 0.4099 | AUC 0.7172 | 438s
+  epoca 37/60 | train 0.3571 | val 0.4167 | AUC 0.7155 | 449s

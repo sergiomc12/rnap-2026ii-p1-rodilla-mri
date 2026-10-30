@@ -1,0 +1,27 @@
+{
+  "modelo": "inception",
+  "perdida": "bce",
+  "pooling": "atencion_por_etiqueta",
+  "preentrenado": true,
+  "seleccion": "D:\\Backend\\redesneuronales\\pregunta1\\paso2_preprocesamiento\\estudios_4407.csv",
+  "cache": "D:\\Backend\\redesneuronales\\pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g64_coronal",
+  "cache_coronal": null,
+  "cache_axial": null,
+  "multiplano": false,
+  "etiquetas_activas": [
+    "Lateral Meniscus",
+    "PF OA"
+  ],
+  "reanudado_de": "D:\\Backend\\redesneuronales\\pregunta1\\paso3_modelos\\corridas\\cara_coronal_a60\\pesos.pt",
+  "epoca_inicial": 28,
+  "epocas": 33,
+  "lote": 2,
+  "acumular": 1,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "paciencia": 60,
+  "aumentar": true,
+  "semilla": 42,
+  "amp": false,
+  "en_memoria": false
+}

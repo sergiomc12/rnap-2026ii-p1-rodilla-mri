@@ -1,0 +1,38 @@
+{
+  "modelo": "inception",
+  "perdida": "bce",
+  "pooling": "atencion_por_etiqueta",
+  "seleccion": "pregunta1\\paso2_preprocesamiento\\estudios_4407.csv",
+  "cache": "pregunta1\\paso2_preprocesamiento\\caches_ablacion\\g64_axial",
+  "etiquetas_activas": [
+    "Synovitis",
+    "ACL"
+  ],
+  "mejor_epoca": 14,
+  "auc_validacion": 0.7407736944501505,
+  "rescatado_de_pesos": true,
+  "nota": "la corrida se colgo en la epoca 19/25 sin escribir su historial; este archivo se reconstruyo corriendo inferencia sobre pesos.pt de la epoca 14, su mejor epoca. Solo contiene esa epoca, no las 19.",
+  "epocas": [
+    {
+      "epoca": 14,
+      "perdida_entrenamiento": null,
+      "perdida_validacion": 0.3578275010006886,
+      "auc_macro": 0.5559949591070095,
+      "auc_por_etiqueta": {
+        "ACL": 0.6625357210897314,
+        "MCL": 0.5683589138134593,
+        "Medial Meniscus": 0.5760322416210016,
+        "Lateral Meniscus": 0.4113220385112608,
+        "Medial OA": 0.4472978220198383,
+        "Lateral OA": 0.35681041593024626,
+        "PF OA": 0.5509378400870623,
+        "Effusion": 0.6556737588652483,
+        "Synovitis": 0.8190116678105697,
+        "Baker's": 0.5163380038055699,
+        "Contusion": 0.5781201207452898,
+        "Fracture": 0.5295009649848359
+      },
+      "segundos": null
+    }
+  ]
+}

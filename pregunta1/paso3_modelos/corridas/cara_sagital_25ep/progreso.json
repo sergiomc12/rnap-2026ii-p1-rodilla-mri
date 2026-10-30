@@ -1,0 +1,16 @@
+{
+  "epoca": 24,
+  "auc_validacion": 0.7123649978708876,
+  "auc_macro_doce": 0.6337313860381125,
+  "etiquetas_activas": [
+    "Effusion",
+    "MCL",
+    "Contusion",
+    "Lateral OA",
+    "Baker's",
+    "Fracture",
+    "Medial Meniscus",
+    "Medial OA"
+  ],
+  "perdida_validacion": 0.38902232952853205
+}

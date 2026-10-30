@@ -1,0 +1,23 @@
+\begin{table}[ht]
+\centering
+\caption{Resultados sobre los estudios dorados. El umbral se selecciona en
+validación y se aplica sin modificación. Los dos bloques son regímenes de datos
+distintos y no se comparan entre sí; dentro de cada uno solo cambia la
+arquitectura.}
+\label{tab:principal}
+\begin{tabular}{lrcccc}
+\toprule
+Configuración & Parám. & AUC macro & IC95\% & $F_1$ & Umbral \\
+\midrule
+\multicolumn{6}{l}{\emph{576 estudios, 8 grupos, una sola vista sagital}} \\
+A --- Inception desde cero & 0.7~M & 0.628 & $[0.569, 0.687]$ & 0.484 & 0.25 \\
+B --- ResNet-50 ImageNet & 24.1~M & 0.646 & $[0.579, 0.703]$ & 0.490 & 0.25 \\
+B + agregación por promedio & 23.5~M & 0.708 & $[0.662, 0.755]$ & 0.560 & 0.20 \\
+\midrule
+\multicolumn{6}{l}{\emph{4\,407 estudios, 64 grupos, atención por etiqueta}} \\
+C --- Inception, un modelo de 12 & 1.3~M & 0.638 & $[0.581, 0.693]$ & 0.500 & 0.15 \\
+D --- Inception por caras & $3\times$1.3~M & 0.658 & $[0.607, 0.709]$ & 0.487 & 0.20 \\
+E --- ResNet-50 por caras & $4\times$26.9~M & \textbf{0.761} & $[0.715, 0.810]$ & \textbf{0.588} & 0.20 \\
+\bottomrule
+\end{tabular}
+\end{table}

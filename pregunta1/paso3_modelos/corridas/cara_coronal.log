@@ -1,0 +1,37 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=pregunta1\paso2_preprocesamiento\caches_ablacion\g64_coronal
+seleccion=pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=25 lote=2 lr=0.0001 paciencia=25 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Lateral Meniscus', 'PF OA']
+
+dispositivo: cuda
+
+  epoca  1/25 | train 0.5820 | val 0.5807 | AUC(2) 0.5951 | AUC(12) 0.5181 | 466s *
+  epoca  2/25 | train 0.5660 | val 0.5745 | AUC(2) 0.6239 | AUC(12) 0.5341 | 453s *
+  epoca  3/25 | train 0.5574 | val 0.5795 | AUC(2) 0.6287 | AUC(12) 0.5508 | 451s *
+  epoca  4/25 | train 0.5540 | val 0.5741 | AUC(2) 0.6291 | AUC(12) 0.5298 | 451s *
+  epoca  5/25 | train 0.5548 | val 0.5798 | AUC(2) 0.6304 | AUC(12) 0.5557 | 447s *
+  epoca  6/25 | train 0.5535 | val 0.5813 | AUC(2) 0.6154 | AUC(12) 0.5378 | 466s
+  epoca  7/25 | train 0.5529 | val 0.5802 | AUC(2) 0.6242 | AUC(12) 0.5337 | 446s
+  epoca  8/25 | train 0.5525 | val 0.5824 | AUC(2) 0.6121 | AUC(12) 0.5256 | 437s
+  epoca  9/25 | train 0.5492 | val 0.5729 | AUC(2) 0.6371 | AUC(12) 0.5286 | 470s *
+  epoca 10/25 | train 0.5471 | val 0.5764 | AUC(2) 0.6441 | AUC(12) 0.5248 | 446s *
+  epoca 11/25 | train 0.5459 | val 0.5693 | AUC(2) 0.6389 | AUC(12) 0.5413 | 443s
+  epoca 12/25 | train 0.5436 | val 0.5707 | AUC(2) 0.6498 | AUC(12) 0.5332 | 447s *
+  epoca 13/25 | train 0.5423 | val 0.5744 | AUC(2) 0.6483 | AUC(12) 0.5422 | 442s
+  epoca 14/25 | train 0.5404 | val 0.5893 | AUC(2) 0.6240 | AUC(12) 0.5417 | 449s
+  epoca 15/25 | train 0.5377 | val 0.5736 | AUC(2) 0.6427 | AUC(12) 0.5476 | 442s
+  epoca 16/25 | train 0.5409 | val 0.5697 | AUC(2) 0.6372 | AUC(12) 0.5437 | 440s
+  epoca 17/25 | train 0.5353 | val 0.5666 | AUC(2) 0.6526 | AUC(12) 0.5418 | 443s *
+  epoca 18/25 | train 0.5391 | val 0.5645 | AUC(2) 0.6560 | AUC(12) 0.5410 | 452s *
+  epoca 19/25 | train 0.5343 | val 0.5687 | AUC(2) 0.6517 | AUC(12) 0.5399 | 454s
+  epoca 20/25 | train 0.5320 | val 0.5701 | AUC(2) 0.6496 | AUC(12) 0.5404 | 446s
+  epoca 21/25 | train 0.5295 | val 0.5729 | AUC(2) 0.6455 | AUC(12) 0.5352 | 449s
+  epoca 22/25 | train 0.5274 | val 0.5772 | AUC(2) 0.6492 | AUC(12) 0.5416 | 458s
+  epoca 23/25 | train 0.5304 | val 0.5692 | AUC(2) 0.6527 | AUC(12) 0.5423 | 450s
+  epoca 24/25 | train 0.5259 | val 0.5776 | AUC(2) 0.6365 | AUC(12) 0.5293 | 468s
+  epoca 25/25 | train 0.5230 | val 0.5808 | AUC(2) 0.6415 | AUC(12) 0.5294 | 447s
+
+mejor epoca 18 | AUC validacion 0.6560 | 187.7 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_coronal_25ep

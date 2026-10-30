@@ -1,0 +1,74 @@
+[
+  {
+    "descripcion": "entregable #2: las dos arquitecturas",
+    "a": "inception_bce_atencion",
+    "b": "resnet50_bce_atencion",
+    "auc_a": 0.6309465646390731,
+    "auc_b": 0.6634350025516402,
+    "delta": -0.03248843791256717,
+    "bajo": -0.10992277057128108,
+    "alto": 0.03484820303264724,
+    "probabilidad_a_mejor": 0.1915,
+    "significativa": false
+  },
+  {
+    "descripcion": "ablacion: pooling por media vs. atencion",
+    "a": "resnet50_promedio",
+    "b": "resnet50_bce_atencion",
+    "auc_a": 0.707143883538914,
+    "auc_b": 0.6634350025516402,
+    "delta": 0.04370888098727377,
+    "bajo": -0.004638028709205599,
+    "alto": 0.0924929882282699,
+    "probabilidad_a_mejor": 0.961,
+    "significativa": false
+  },
+  {
+    "descripcion": "ablacion: con vs. sin pesos de ImageNet",
+    "a": "resnet50_bce_atencion",
+    "b": "resnet50_sin_imagenet",
+    "auc_a": 0.6634350025516402,
+    "auc_b": 0.5774571263563374,
+    "delta": 0.08597787619530284,
+    "bajo": 0.012696810725165264,
+    "alto": 0.1650304348313789,
+    "probabilidad_a_mejor": 0.988,
+    "significativa": true
+  },
+  {
+    "descripcion": "ablacion: focal vs. BCE (con atencion)",
+    "a": "resnet50_focal",
+    "b": "resnet50_bce_atencion",
+    "auc_a": 0.6503736848403273,
+    "auc_b": 0.6634350025516402,
+    "delta": -0.013061317711312914,
+    "bajo": -0.07279916076681059,
+    "alto": 0.0425688532151145,
+    "probabilidad_a_mejor": 0.3205,
+    "significativa": false
+  },
+  {
+    "descripcion": "ablacion: focal vs. BCE (con media)",
+    "a": "resnet50_promedio_focal",
+    "b": "resnet50_promedio",
+    "auc_a": 0.6753258784090564,
+    "auc_b": 0.707143883538914,
+    "delta": -0.03181800512985755,
+    "bajo": -0.08259762739597942,
+    "alto": 0.017745322882942616,
+    "probabilidad_a_mejor": 0.095,
+    "significativa": false
+  },
+  {
+    "descripcion": "desbalance: BCE ponderada vs. BCE",
+    "a": "resnet50_promedio_ponderada",
+    "b": "resnet50_promedio",
+    "auc_a": 0.7259310769444691,
+    "auc_b": 0.707143883538914,
+    "delta": 0.018787193405555125,
+    "bajo": -0.02074865011959426,
+    "alto": 0.06323447640819146,
+    "probabilidad_a_mejor": 0.7965,
+    "significativa": false
+  }
+]

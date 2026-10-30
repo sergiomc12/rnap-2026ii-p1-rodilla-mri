@@ -1,0 +1,15 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+multiplano: 3480 train / 869 val con los tres planos
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+
+dispositivo: cuda
+
+  epoca  1/60 | train 0.4443 | val 0.4513 | AUC 0.5324 | 1391s *
+  epoca  2/60 | train 0.4238 | val 0.4605 | AUC 0.5271 | 1383s
+  epoca  3/60 | train 0.4181 | val 0.4613 | AUC 0.5193 | 1388s
+  epoca  4/60 | train 0.4133 | val 0.4668 | AUC 0.5293 | 1397s
+  epoca  5/60 | train 0.4095 | val 0.4721 | AUC 0.5287 | 1412s
+  epoca  6/60 | train 0.4044 | val 0.4743 | AUC 0.5118 | 1384s
+
+mejor epoca 1 | AUC validacion 0.5324 | 139.2 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\inception_3planos

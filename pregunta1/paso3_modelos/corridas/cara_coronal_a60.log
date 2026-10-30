@@ -1,0 +1,97 @@
+
+--- reintento: epocas 19-60, desde AUC 0.6560 ---
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\caches_ablacion\g64_coronal
+seleccion=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=42 lote=2 lr=0.0001 paciencia=60 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Lateral Meniscus', 'PF OA']
+
+dispositivo: cuda
+reanudado desde C:\Users\odt054\AppData\Local\Temp\origen_caras\coronal.pt
+  OJO: el checkpoint es del formato viejo y NO trae el estado del optimizador.
+  AdamW arranca con sus momentos en cero, asi que las primeras epocas pueden bajar antes de recuperar.
+
+  epoca 19/60 | train 0.5321 | val 0.5763 | AUC(2) 0.6234 | AUC(12) 0.5351 | 462s
+  epoca 20/60 | train 0.5337 | val 0.5689 | AUC(2) 0.6494 | AUC(12) 0.5384 | 444s
+  epoca 21/60 | train 0.5292 | val 0.5658 | AUC(2) 0.6508 | AUC(12) 0.5297 | 448s
+  epoca 22/60 | train 0.5262 | val 0.5657 | AUC(2) 0.6528 | AUC(12) 0.5343 | 443s
+  epoca 23/60 | train 0.5284 | val 0.5690 | AUC(2) 0.6585 | AUC(12) 0.5384 | 443s *
+
+--- reintento: epocas 24-60, desde AUC 0.6585 ---
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\caches_ablacion\g64_coronal
+seleccion=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=37 lote=2 lr=0.0001 paciencia=60 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Lateral Meniscus', 'PF OA']
+
+dispositivo: cuda
+reanudado desde D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_coronal_a60\pesos.pt
+  con estado del optimizador (venia de la epoca 23)
+
+  epoca 24/60 | train 0.5221 | val 0.5726 | AUC(2) 0.6367 | AUC(12) 0.5353 | 434s
+  epoca 25/60 | train 0.5207 | val 0.5711 | AUC(2) 0.6558 | AUC(12) 0.5363 | 437s
+  epoca 26/60 | train 0.5162 | val 0.5677 | AUC(2) 0.6562 | AUC(12) 0.5342 | 435s
+  epoca 27/60 | train 0.5138 | val 0.5685 | AUC(2) 0.6592 | AUC(12) 0.5291 | 442s *
+  epoca 28/60 | train 0.5154 | val 0.5746 | AUC(2) 0.6578 | AUC(12) 0.5319 | 441s
+  epoca 29/60 | train 0.5149 | val 0.5791 | AUC(2) 0.6388 | AUC(12) 0.5208 | 442s
+  epoca 30/60 | train 0.5148 | val 0.5714 | AUC(2) 0.6585 | AUC(12) 0.5257 | 441s
+  epoca 31/60 | train 0.5142 | val 0.5713 | AUC(2) 0.6457 | AUC(12) 0.5199 | 447s
+  epoca 32/60 | train 0.5097 | val 0.5740 | AUC(2) 0.6412 | AUC(12) 0.5151 | 444s
+  epoca 33/60 | train 0.5080 | val 0.5886 | AUC(2) 0.6442 | AUC(12) 0.5206 | 444s
+  epoca 34/60 | train 0.5079 | val 0.5755 | AUC(2) 0.6508 | AUC(12) 0.5443 | 443s
+  epoca 35/60 | train 0.4998 | val 0.5781 | AUC(2) 0.6499 | AUC(12) 0.5197 | 449s
+  epoca 36/60 | train 0.5004 | val 0.5833 | AUC(2) 0.6587 | AUC(12) 0.5328 | 445s
+  epoca 37/60 | train 0.4951 | val 0.5965 | AUC(2) 0.6468 | AUC(12) 0.5393 | 444s
+
+--- reintento: epocas 28-60, desde AUC 0.6592 ---
+
+--- reintento: epocas 28-60, desde AUC 0.6592 ---
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+cache=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\caches_ablacion\g64_coronal
+seleccion=D:\Backend\redesneuronales\pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=33 lote=2 lr=0.0001 paciencia=60 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Lateral Meniscus', 'PF OA']
+
+dispositivo: cuda
+reanudado desde D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_coronal_a60\pesos.pt
+  con estado del optimizador (venia de la epoca 27)
+
+  epoca 28/60 | train 0.5113 | val 0.5772 | AUC(2) 0.6296 | AUC(12) 0.5286 | 428s
+  epoca 29/60 | train 0.5083 | val 0.5721 | AUC(2) 0.6655 | AUC(12) 0.5340 | 440s *
+  epoca 30/60 | train 0.5014 | val 0.5802 | AUC(2) 0.6403 | AUC(12) 0.5250 | 438s
+  epoca 31/60 | train 0.4996 | val 0.5825 | AUC(2) 0.6615 | AUC(12) 0.5356 | 444s
+  epoca 32/60 | train 0.5100 | val 0.5853 | AUC(2) 0.6603 | AUC(12) 0.5331 | 442s
+  epoca 33/60 | train 0.5075 | val 0.5869 | AUC(2) 0.6343 | AUC(12) 0.5200 | 444s
+  epoca 34/60 | train 0.5073 | val 0.5757 | AUC(2) 0.6558 | AUC(12) 0.5283 | 441s
+  epoca 35/60 | train 0.5066 | val 0.5763 | AUC(2) 0.6399 | AUC(12) 0.5203 | 447s
+  epoca 36/60 | train 0.5011 | val 0.5751 | AUC(2) 0.6421 | AUC(12) 0.5211 | 444s
+  epoca 37/60 | train 0.4977 | val 0.5993 | AUC(2) 0.6490 | AUC(12) 0.5239 | 444s
+  epoca 38/60 | train 0.4996 | val 0.5760 | AUC(2) 0.6531 | AUC(12) 0.5469 | 443s
+  epoca 39/60 | train 0.4900 | val 0.5839 | AUC(2) 0.6367 | AUC(12) 0.5201 | 448s
+  epoca 40/60 | train 0.4917 | val 0.5888 | AUC(2) 0.6571 | AUC(12) 0.5399 | 446s
+  epoca 41/60 | train 0.4856 | val 0.5915 | AUC(2) 0.6478 | AUC(12) 0.5442 | 445s
+  epoca 42/60 | train 0.4781 | val 0.5954 | AUC(2) 0.6514 | AUC(12) 0.5395 | 442s
+  epoca 43/60 | train 0.4846 | val 0.5961 | AUC(2) 0.6330 | AUC(12) 0.5385 | 439s
+  epoca 44/60 | train 0.4763 | val 0.5975 | AUC(2) 0.6460 | AUC(12) 0.5455 | 456s
+  epoca 45/60 | train 0.4776 | val 0.6155 | AUC(2) 0.6521 | AUC(12) 0.5480 | 477s
+  epoca 46/60 | train 0.4718 | val 0.5946 | AUC(2) 0.6528 | AUC(12) 0.5252 | 452s
+  epoca 47/60 | train 0.4708 | val 0.6000 | AUC(2) 0.6476 | AUC(12) 0.5343 | 445s
+  epoca 48/60 | train 0.4650 | val 0.5973 | AUC(2) 0.6585 | AUC(12) 0.5462 | 458s
+  epoca 49/60 | train 0.4585 | val 0.6068 | AUC(2) 0.6532 | AUC(12) 0.5398 | 447s
+  epoca 50/60 | train 0.4583 | val 0.6095 | AUC(2) 0.6367 | AUC(12) 0.5300 | 452s
+  epoca 51/60 | train 0.4524 | val 0.6435 | AUC(2) 0.6167 | AUC(12) 0.5201 | 492s
+  epoca 52/60 | train 0.4517 | val 0.5965 | AUC(2) 0.6459 | AUC(12) 0.5249 | 468s
+  epoca 53/60 | train 0.4461 | val 0.6354 | AUC(2) 0.6431 | AUC(12) 0.5332 | 447s
+  epoca 54/60 | train 0.4405 | val 0.6561 | AUC(2) 0.6605 | AUC(12) 0.5435 | 463s
+  epoca 55/60 | train 0.4402 | val 0.6363 | AUC(2) 0.6525 | AUC(12) 0.5429 | 459s
+  epoca 56/60 | train 0.4360 | val 0.6129 | AUC(2) 0.6624 | AUC(12) 0.5439 | 460s
+  epoca 57/60 | train 0.4318 | val 0.6165 | AUC(2) 0.6324 | AUC(12) 0.5316 | 468s
+  epoca 58/60 | train 0.4195 | val 0.6512 | AUC(2) 0.6586 | AUC(12) 0.5509 | 461s
+  epoca 59/60 | train 0.4218 | val 0.6071 | AUC(2) 0.6603 | AUC(12) 0.5456 | 479s
+  epoca 60/60 | train 0.4134 | val 0.6681 | AUC(2) 0.6375 | AUC(12) 0.5411 | 493s
+
+mejor epoca 29 | AUC validacion 0.6655 | 249.3 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_coronal_a60

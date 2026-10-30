@@ -1,0 +1,32 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=resnet50 perdida=bce pooling=atencion_por_etiqueta params=26.9M
+cache=pregunta1\paso2_preprocesamiento\caches_ablacion\g64_axial
+seleccion=pregunta1\paso2_preprocesamiento\estudios_4407.csv
+epocas=20 lote=2 lr=0.0001 paciencia=20 semilla=42 aumentar=True amp=False
+etiquetas_activas=['Lateral Meniscus', 'PF OA']
+
+dispositivo: cuda
+
+  epoca  1/20 | train 0.5606 | val 0.5463 | AUC(2) 0.6909 | AUC(12) 0.5023 | 529s *
+  epoca  2/20 | train 0.5280 | val 0.5432 | AUC(2) 0.7122 | AUC(12) 0.5476 | 508s *
+  epoca  3/20 | train 0.5065 | val 0.5511 | AUC(2) 0.7251 | AUC(12) 0.5464 | 511s *
+  epoca  4/20 | train 0.4742 | val 0.5729 | AUC(2) 0.7372 | AUC(12) 0.5602 | 510s *
+  epoca  5/20 | train 0.4417 | val 0.5472 | AUC(2) 0.7343 | AUC(12) 0.5432 | 510s
+  epoca  6/20 | train 0.3882 | val 0.6072 | AUC(2) 0.7461 | AUC(12) 0.5545 | 510s *
+  epoca  7/20 | train 0.3246 | val 0.5818 | AUC(2) 0.7585 | AUC(12) 0.5546 | 510s *
+  epoca  8/20 | train 0.2664 | val 0.6671 | AUC(2) 0.7285 | AUC(12) 0.5494 | 510s
+  epoca  9/20 | train 0.2065 | val 0.7003 | AUC(2) 0.7437 | AUC(12) 0.5544 | 509s
+  epoca 10/20 | train 0.1704 | val 0.8185 | AUC(2) 0.7315 | AUC(12) 0.5440 | 512s
+  epoca 11/20 | train 0.1456 | val 0.8330 | AUC(2) 0.7403 | AUC(12) 0.5486 | 510s
+  epoca 12/20 | train 0.1271 | val 0.8795 | AUC(2) 0.7376 | AUC(12) 0.5481 | 511s
+  epoca 13/20 | train 0.1117 | val 0.9804 | AUC(2) 0.7392 | AUC(12) 0.5605 | 511s
+  epoca 14/20 | train 0.1065 | val 0.8754 | AUC(2) 0.7311 | AUC(12) 0.5477 | 512s
+  epoca 15/20 | train 0.1022 | val 0.9220 | AUC(2) 0.7350 | AUC(12) 0.5403 | 509s
+  epoca 16/20 | train 0.0891 | val 1.2398 | AUC(2) 0.7185 | AUC(12) 0.5613 | 509s
+  epoca 17/20 | train 0.0784 | val 1.0162 | AUC(2) 0.7478 | AUC(12) 0.5571 | 512s
+  epoca 18/20 | train 0.0746 | val 1.0168 | AUC(2) 0.7338 | AUC(12) 0.5660 | 512s
+  epoca 19/20 | train 0.0750 | val 1.1913 | AUC(2) 0.7216 | AUC(12) 0.5670 | 512s
+  epoca 20/20 | train 0.0760 | val 1.0496 | AUC(2) 0.7254 | AUC(12) 0.5641 | 512s
+
+mejor epoca 7 | AUC validacion 0.7585 | 170.6 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_axial_rn50_2etiq

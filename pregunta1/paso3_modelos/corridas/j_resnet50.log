@@ -1,0 +1,23 @@
+    26 tensores en RAM, 0.2 GB (uint8)
+    6 tensores en RAM, 0.1 GB (uint8)
+D:\Backend\redesneuronales\pregunta1\paso3_modelos\entrenamiento.py:163: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:821.)
+  suma += float(perdida) * len(etiquetas)
+33 estudios | entrenamiento=26 validacion=6 prueba(dorados)=1
+modelo=resnet50 perdida=bce pooling=atencion_por_etiqueta params=26.9M
+
+dispositivo: cuda
+
+  epoca  1/60 | train 0.6565 | val 0.5280 | AUC 0.2370 | 6s *
+  epoca  2/60 | train 0.5397 | val 0.3626 | AUC 0.3481 | 5s *
+  epoca  3/60 | train 0.4568 | val 0.2906 | AUC 0.5852 | 5s *
+  epoca  4/60 | train 0.4125 | val 0.2522 | AUC 0.5852 | 5s
+  epoca  5/60 | train 0.3848 | val 0.2749 | AUC 0.6222 | 5s *
+  epoca  6/60 | train 0.3479 | val 0.2704 | AUC 0.3852 | 5s
+  epoca  7/60 | train 0.3343 | val 0.2436 | AUC 0.5852 | 5s
+  epoca  8/60 | train 0.3446 | val 0.2791 | AUC 0.4815 | 5s
+  epoca  9/60 | train 0.3129 | val 0.2593 | AUC 0.4815 | 5s
+  epoca 10/60 | train 0.3070 | val 0.2652 | AUC 0.4815 | 5s
+
+mejor epoca 5 | AUC validacion 0.6222 | 0.9 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\resnet50_poretiqueta_g64_4407

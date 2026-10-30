@@ -1,0 +1,33 @@
+4407 estudios | entrenamiento=3480 validacion=869 prueba(dorados)=58
+modelo=inception perdida=bce pooling=atencion_por_etiqueta params=1.3M
+
+dispositivo: cuda
+
+  epoca  1/25 | train 0.4232 | val 0.4209 | AUC(8) 0.6358 | AUC(12) 0.5887 | 486s *
+  epoca  2/25 | train 0.4081 | val 0.4053 | AUC(8) 0.6540 | AUC(12) 0.5915 | 475s *
+  epoca  3/25 | train 0.4019 | val 0.4015 | AUC(8) 0.6647 | AUC(12) 0.5900 | 488s *
+  epoca  4/25 | train 0.3994 | val 0.3984 | AUC(8) 0.6667 | AUC(12) 0.6053 | 489s *
+  epoca  5/25 | train 0.3960 | val 0.3958 | AUC(8) 0.6607 | AUC(12) 0.5997 | 483s
+  epoca  6/25 | train 0.3937 | val 0.3933 | AUC(8) 0.6798 | AUC(12) 0.6131 | 489s *
+  epoca  7/25 | train 0.3909 | val 0.3926 | AUC(8) 0.6805 | AUC(12) 0.6021 | 486s *
+  epoca  8/25 | train 0.3896 | val 0.3948 | AUC(8) 0.6774 | AUC(12) 0.6123 | 492s
+  epoca  9/25 | train 0.3860 | val 0.3897 | AUC(8) 0.6799 | AUC(12) 0.6111 | 530s
+  epoca 10/25 | train 0.3833 | val 0.3930 | AUC(8) 0.6858 | AUC(12) 0.6195 | 528s *
+  epoca 11/25 | train 0.3838 | val 0.3890 | AUC(8) 0.6904 | AUC(12) 0.6219 | 528s *
+  epoca 12/25 | train 0.3824 | val 0.3874 | AUC(8) 0.6864 | AUC(12) 0.6253 | 528s
+  epoca 13/25 | train 0.3806 | val 0.3885 | AUC(8) 0.6928 | AUC(12) 0.6289 | 530s *
+  epoca 14/25 | train 0.3781 | val 0.3916 | AUC(8) 0.6986 | AUC(12) 0.6381 | 530s *
+  epoca 15/25 | train 0.3755 | val 0.3902 | AUC(8) 0.6964 | AUC(12) 0.6404 | 467s
+  epoca 16/25 | train 0.3737 | val 0.3905 | AUC(8) 0.7006 | AUC(12) 0.6473 | 444s *
+  epoca 17/25 | train 0.3725 | val 0.3873 | AUC(8) 0.7044 | AUC(12) 0.6472 | 440s *
+  epoca 18/25 | train 0.3699 | val 0.3813 | AUC(8) 0.7107 | AUC(12) 0.6446 | 440s *
+  epoca 19/25 | train 0.3704 | val 0.3831 | AUC(8) 0.7108 | AUC(12) 0.6542 | 443s *
+  epoca 20/25 | train 0.3674 | val 0.3824 | AUC(8) 0.7106 | AUC(12) 0.6317 | 436s
+  epoca 21/25 | train 0.3656 | val 0.3837 | AUC(8) 0.7065 | AUC(12) 0.6353 | 438s
+  epoca 22/25 | train 0.3638 | val 0.3876 | AUC(8) 0.7035 | AUC(12) 0.6345 | 460s
+  epoca 23/25 | train 0.3611 | val 0.3858 | AUC(8) 0.7122 | AUC(12) 0.6403 | 448s *
+  epoca 24/25 | train 0.3614 | val 0.3890 | AUC(8) 0.7124 | AUC(12) 0.6337 | 440s *
+  epoca 25/25 | train 0.3594 | val 0.3839 | AUC(8) 0.6995 | AUC(12) 0.6230 | 455s
+
+mejor epoca 24 | AUC validacion 0.7124 | 199.6 min
+guardado en D:\Backend\redesneuronales\pregunta1\paso3_modelos\corridas\cara_sagital_25ep

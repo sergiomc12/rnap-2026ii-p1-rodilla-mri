@@ -1,0 +1,71 @@
+# .gitignore de la Pregunta 1. El repositorio sera PUBLICO: aca se excluye todo
+# dato crudo, peso de modelo y artefacto regenerable, y se CONSERVA el codigo
+# (*.py), el informe (*.tex, *.pdf, *.bib, *.sty), los JSON de resultados y las
+# figuras PNG que el informe incrusta.
+#
+# Solo aplica al subarbol pregunta1/. El .gitignore de la raiz cubre el resto.
+
+# --- Datos crudos y descargas (nunca se versionan) ------------------------
+datos/
+data/
+data_kaggle/
+descargas/
+*.zip
+*.dcm
+*.nii
+*.nii.gz
+
+# Artefactos intermedios del pipeline (se regeneran con ejecutar_todo.py)
+paso1_etiquetas_debiles/etiquetas_debiles.csv
+paso1_etiquetas_debiles/reportes_traducidos.csv
+paso2_preprocesamiento/estudios_seleccionados.csv
+paso2_preprocesamiento/estudios_coronal.csv
+
+# --- Caches (tensores 2.5D, etc.) -----------------------------------------
+cache/
+**/cache/
+**/cache_*/
+**/caches_*/
+
+# --- Pesos de modelos (grandes, regenerables) -----------------------------
+*.pt
+*.pth
+*.onnx
+**/pesos*.pt
+corridas/**/*.pt
+
+# --- Entorno y bytecode ----------------------------------------------------
+.venv/
+venv/
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Secretos (nunca, bajo ninguna circunstancia) -------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.token
+kaggle.json
+credenciales/
+
+# --- Auxiliares de LaTeX (el PDF SI se conserva, ver abajo) ---------------
+paso6_informe/informe/*.aux
+paso6_informe/informe/*.log
+paso6_informe/informe/*.out
+paso6_informe/informe/*.bbl
+paso6_informe/informe/*.blg
+paso6_informe/informe/*.fls
+paso6_informe/informe/*.fdb_latexmk
+paso6_informe/informe/~$*.docx
+
+# --- Se CONSERVAN explicitamente (contrarrestan reglas mas amplias) -------
+# El .gitignore de la raiz ignora el PDF compilado; aca se re-incluye porque
+# es parte de la entrega.
+!paso6_informe/informe/informe.pdf
+!**/*.json
+!paso5_ablacion_gradcam/figuras/*.png
+!paso6_informe/informe/figuras/*.png

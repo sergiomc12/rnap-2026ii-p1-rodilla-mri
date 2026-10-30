@@ -1,0 +1,36 @@
+{
+  "corrida": "resnet50_promedio",
+  "pooling": "promedio",
+  "casos": [
+    {
+      "hallazgo": "Effusion",
+      "estudio": "1.2.826.0.1.3680043.8.498.10095687747295410396510538520594649149",
+      "probabilidad": 0.5764004588127136,
+      "grupo_atendido": 0,
+      "atencion_maxima": 0.125,
+      "atencion_uniforme": true,
+      "fraccion_area_caliente": 0.0421516262755102,
+      "figura": "gradcam_Effusion.png"
+    },
+    {
+      "hallazgo": "Medial Meniscus",
+      "estudio": "1.2.826.0.1.3680043.8.498.10306159113324811538703788080836752052",
+      "probabilidad": 0.40643444657325745,
+      "grupo_atendido": 0,
+      "atencion_maxima": 0.125,
+      "atencion_uniforme": true,
+      "fraccion_area_caliente": 0.035435267857142856,
+      "figura": "gradcam_Medial_Meniscus.png"
+    },
+    {
+      "hallazgo": "ACL",
+      "estudio": "1.2.826.0.1.3680043.8.498.11382021393803389951964005983002209238",
+      "probabilidad": 0.8148909211158752,
+      "grupo_atendido": 0,
+      "atencion_maxima": 0.125,
+      "atencion_uniforme": true,
+      "fraccion_area_caliente": 0.10883689413265306,
+      "figura": "gradcam_ACL.png"
+    }
+  ]
+}
