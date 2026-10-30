@@ -238,3 +238,13 @@ Leerlos para entender el problema y citarlos en "trabajos relacionados" es
 correcto. Copiar arquitectura, pipeline o código, no. Además, el notebook de
 0.946 declara en su propia primera celda que su autor no escribió nada de ese
 código.
+
+## Pesos preentrenados
+
+Los pesos de los modelos entrenados estan publicados como *release* (no caben en el repo por el limite de 100 MB/archivo de GitHub):
+
+**https://github.com/sergiomc12/rnap-2026ii-p1-rodilla-mri/releases/tag/v1.0-pesos**
+
+Cada asset `<corrida>_pesos.pt` va en `pregunta1/paso3_modelos/corridas/<corrida>/pesos.pt`. El modelo de referencia del analisis detallado es `resnet50_promedio`. No es necesario descargarlos para leer el informe ni correr el notebook (que lee los JSON de resultados); solo para reusar un modelo ya entrenado sin reentrenar.
+
+> Nota: `paso6_informe/ejecutar_todo.py` regenera las tablas desde los JSON; una corrida COMPLETA del pipeline requiere el dataset RSNA (~570 GB, se descarga con los scripts) y sobrescribe las tablas refinadas. El PDF incluido ya es el final.
